@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPS-MIS Point of Sale System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .date-time {
+            color: #667eea;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .panel h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .quantity-control {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .quantity-control button {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-danger {
+            background: #6c757d;
+        }
+
+        .total {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .total .amount {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .cart-item {
+            background: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .report-table th, .report-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .report-table th {
+            background: #f8f9fa;
+        }
+
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: white;
+            animation: slideIn 0.3s;
+        }
+
+        .success { background: #28a745; }
+        .error { background: #dc3545; }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏪 TPS-MIS Point of Sale System</h1>
+            <p>TechRetail Solutions - Transaction Processing & Management Information System</p>
+            <div class="date-time" id="datetime"></div>
+        </div>
+
+        <div class="grid">
+            <!-- Left Panel - POS Entry -->
+            <div class="panel">
+                <h2>🛒 New Transaction</h2>
+                <div class="form-group">
+                    <label>👤 Staff Member</label>
+                    <select id="staffSelect">
+                        <option value="">Select Staff</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>📦 Product</label>
+                    <select id="productSelect">
+                        <option value="">Select Product</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>💰 Price</label>
+                    <input type="text" id="price" readonly>
+                </div>
+                <div class="form-group">
+                    <label>🔢 Quantity</label>
+                    <div class="quantity-control">
+                        <button onclick="changeQty(-1)">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button onclick="changeQty(1)">+</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>💳 Payment</label>
+                    <select id="payment">
+                        <option>Cash</option>
+                        <option>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>Mobile Payment</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="addToCart()">➕ Add to Cart</button>
+            </div>
+
+            <!-- Right Panel - Cart -->
+            <div class="panel">
+                <h2>🛍️ Shopping Cart</h2>
+                <div id="cartList"></div>
+                <div class="total">
+                    <div>Total Amount</div>
+                    <div class="amount" id="cartTotal">$0.00</div>
+                </div>
+                <button class="btn" onclick="completeSale()">✅ Complete Sale</button>
+                <button class="btn btn-danger" onclick="clearCart()">🗑️ Clear Cart</button>
+            </div>
+        </div>
+
+        <!-- Reports Panel -->
+        <div class="panel" style="margin-top: 20px;">
+            <h2>📊 MIS Reports</h2>
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <input type="date" id="reportDate" style="flex: 1; padding: 10px;">
+                <button class="btn" style="width: auto; padding: 10px 20px;" onclick="showReport()">Generate</button>
+                <button class="btn" style="width: auto; padding: 10px 20px; background: #28a745;" onclick="generateSamples()">Generate 1000 Samples</button>
+            </div>
+            <div id="report"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============ CONFIGURATION ============
+        // !!! IMPORTANT: Replace this with your Google Apps Script URL !!!
+        const API_URL = 'https://script.google.com/macros/s/AKfycbz_Fk5-KYWljMFA_9MB_VlBT_OOlLbfViVxcMNANjOlEh-Qu9SK7LCR-K5HfClv3WZy/exec';
+        
+        // ============ DATA ============
+        const products = [
+            { code: 'PRD001', name: 'Laptop Pro 15"', price: 1299.99 },
+            { code: 'PRD002', name: 'Wireless Mouse', price: 29.99 },
+            { code: 'PRD003', name: 'Mechanical Keyboard', price: 89.99 },
+            { code: 'PRD004', name: '27" Monitor', price: 349.99 },
+            { code: 'PRD005', name: 'Office Chair', price: 199.99 },
+            { code: 'PRD006', name: 'Standing Desk', price: 399.99 },
+            { code: 'PRD007', name: 'Coffee Maker', price: 79.99 },
+            { code: 'PRD008', name: 'Bluetooth Speaker', price: 59.99 },
+            { code: 'PRD009', name: 'USB-C Hub', price: 39.99 },
+            { code: 'PRD010', name: 'External SSD', price: 149.99 }
+        ];
+        
+        const staff = [
+            { id: 'STF001', name: 'John Smith' },
+            { id: 'STF002', name: 'Sarah Johnson' },
+            { id: 'STF003', name: 'Michael Brown' },
+            { id: 'STF004', name: 'Emily Davis' },
+            { id: 'STF005', name: 'David Wilson' }
+        ];
+        
+        let cart = [];
+        let transactions = [];
+        
+        // ============ FUNCTIONS ============
+        function updateDateTime() {
+            let now = new Date();
+            document.getElementById('datetime').innerHTML = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        function loadData() {
+            // Load products dropdown
+            let productSelect = document.getElementById('productSelect');
+            products.forEach(p => {
+                let option = document.createElement('option');
+                option.value = p.code;
+                option.textContent = `${p.name} - $${p.price}`;
+                productSelect.appendChild(option);
+            });
+            
+            // Load staff dropdown
+            let staffSelect = document.getElementById('staffSelect');
+            staff.forEach(s => {
+                let option = document.createElement('option');
+                option.value = s.id;
+                option.textContent = s.name;
+                staffSelect.appendChild(option);
+            });
+            
+            // Load saved transactions
+            let saved = localStorage.getItem('transactions');
+            if (saved) transactions = JSON.parse(saved);
+        }
+        
+        document.getElementById('productSelect').onchange = function() {
+            let product = products.find(p => p.code == this.value);
+            if (product) {
+                document.getElementById('price').value = '$' + product.price;
+            } else {
+                document.getElementById('price').value = '';
+            }
+        };
+        
+        function changeQty(delta) {
+            let qty = document.getElementById('quantity');
+            let val = parseInt(qty.value) + delta;
+            if (val >= 1) qty.value = val;
+        }
+        
+        function addToCart() {
+            let staffId = document.getElementById('staffSelect').value;
+            let productCode = document.getElementById('productSelect').value;
+            let qty = parseInt(document.getElementById('quantity').value);
+            
+            if (!staffId) { showMessage('Select staff member', 'error'); return; }
+            if (!productCode) { showMessage('Select product', 'error'); return; }
+            
+            let product = products.find(p => p.code == productCode);
+            let staffMember = staff.find(s => s.id == staffId);
+            
+            cart.push({
+                id: Date.now(),
+                staffId: staffId,
+                staffName: staffMember.name,
+                productCode: product.code,
+                productName: product.name,
+                qty: qty,
+                price: product.price,
+                total: qty * product.price
+            });
+            
+            updateCart();
+            showMessage(product.name + ' added to cart', 'success');
+            document.getElementById('quantity').value = 1;
+        }
+        
+        function updateCart() {
+            let cartDiv = document.getElementById('cartList');
+            if (cart.length == 0) {
+                cartDiv.innerHTML = '<p style="text-align:center; color:#999;">Cart is empty</p>';
+                document.getElementById('cartTotal').innerHTML = '$0.00';
+                return;
+            }
+            
+            let html = '';
+            let total = 0;
+            cart.forEach(item => {
+                total += item.total;
+                html += `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.productName}</strong><br>
+                            Qty: ${item.qty} x $${item.price}
+                        </div>
+                        <div>
+                            $${item.total.toFixed(2)}
+                            <button class="remove-btn" onclick="removeFromCart(${item.id})">X</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartDiv.innerHTML = html;
+            document.getElementById('cartTotal').innerHTML = '$' + total.toFixed(2);
+        }
+        
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id != id);
+            updateCart();
+        }
+        
+        function clearCart() {
+            cart = [];
+            updateCart();
+            showMessage('Cart cleared', 'success');
+        }
+        
+        async function completeSale() {
+            if (cart.length == 0) {
+                showMessage('Cart is empty', 'error');
+                return;
+            }
+            
+            let payment = document.getElementById('payment').value;
+            let transactionId = 'TXN' + Date.now();
+            let timestamp = new Date().toISOString();
+            
+            // Save to local storage
+            cart.forEach(item => {
+                transactions.push({
+                    id: transactionId,
+                    timestamp: timestamp,
+                    staffName: item.staffName,
+                    productName: item.productName,
+                    qty: item.qty,
+                    total: item.total,
+                    payment: payment
+                });
+            });
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+            
+            // Save to Google Sheets
+            try {
+                let data = cart.map(item => ({
+                    transactionID: transactionId,
+                    timestamp: timestamp,
+                    staffID: item.staffId,
+                    staffName: item.staffName,
+                    itemCode: item.productCode,
+                    itemName: item.productName,
+                    quantity: item.qty,
+                    unitPrice: item.price,
+                    totalPrice: item.total,
+                    paymentMethod: payment
+                }));
+                
+                await fetch(API_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'saveTransaction', data: data })
+                });
+            } catch(e) {
+                console.log('Google Sheets save failed, but data saved locally');
+            }
+            
+            let total = cart.reduce((sum, i) => sum + i.total, 0);
+            clearCart();
+            showReport();
+            showMessage(`Sale complete! Total: $${total.toFixed(2)}`, 'success');
+        }
+        
+        function showReport() {
+            let date = document.getElementById('reportDate').value;
+            let filtered = transactions;
+            
+            if (date) {
+                filtered = transactions.filter(t => t.timestamp.startsWith(date));
+            }
+            
+            if (filtered.length == 0) {
+                document.getElementById('report').innerHTML = '<p style="text-align:center;">No transactions found</p>';
+                return;
+            }
+            
+            // Product performance
+            let productStats = {};
+            filtered.forEach(t => {
+                if (!productStats[t.productName]) {
+                    productStats[t.productName] = { qty: 0, revenue: 0 };
+                }
+                productStats[t.productName].qty += t.qty;
+                productStats[t.productName].revenue += t.total;
+            });
+            
+            // Staff performance
+            let staffStats = {};
+            filtered.forEach(t => {
+                if (!staffStats[t.staffName]) {
+                    staffStats[t.staffName] = { count: 0, revenue: 0 };
+                }
+                staffStats[t.staffName].count++;
+                staffStats[t.staffName].revenue += t.total;
+            });
+            
+            let totalRevenue = filtered.reduce((sum, t) => sum + t.total, 0);
+            
+            let html = `
+                <h3>Product Performance</h3>
+                <table class="report-table">
+                    <tr><th>Product</th><th>Quantity</th><th>Revenue</th></tr>
+                    ${Object.entries(productStats).map(([name, data]) => `
+                        <tr><td>${name}</td><td>${data.qty}</td><td>$${data.revenue.toFixed(2)}</td></tr>
+                    `).join('')}
+                </table>
+                
+                <h3>Staff Performance</h3>
+                <table class="report-table">
+                    <tr><th>Staff</th><th>Transactions</th><th>Revenue</th></tr>
+                    ${Object.entries(staffStats).map(([name, data]) => `
+                        <tr><td>${name}</td><td>${data.count}</td><td>$${data.revenue.toFixed(2)}</td></tr>
+                    `).join('')}
+                </table>
+                
+                <div style="margin-top:20px; padding:15px; background:#e8f5e9; border-radius:5px;">
+                    <strong>Summary:</strong><br>
+                    Total Transactions: ${filtered.length}<br>
+                    Total Revenue: $${totalRevenue.toFixed(2)}
+                </div>
+            `;
+            
+            document.getElementById('report').innerHTML = html;
+        }
+        
+        function generateSamples() {
+            if (transactions.length >= 1000) {
+                showMessage(`${transactions.length} transactions already exist`, 'error');
+                return;
+            }
+            
+            let startDate = new Date();
+            startDate.setDate(startDate.getDate() - 7);
+            
+            for (let i = 0; i < 1000; i++) {
+                let randomDate = new Date(startDate);
+                randomDate.setMinutes(randomDate.getMinutes() + Math.random() * 10080);
+                
+                let staffMember = staff[Math.floor(Math.random() * staff.length)];
+                let product = products[Math.floor(Math.random() * products.length)];
+                let qty = Math.floor(Math.random() * 5) + 1;
+                let payment = ['Cash', 'Credit Card', 'Debit Card', 'Mobile Payment'][Math.floor(Math.random() * 4)];
+                
+                transactions.push({
+                    id: 'TXN' + (Date.now() + i),
+                    timestamp: randomDate.toISOString(),
+                    staffName: staffMember.name,
+                    productName: product.name,
+                    qty: qty,
+                    total: qty * product.price,
+                    payment: payment
+                });
+            }
+            
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+            showReport();
+            showMessage('1000 sample transactions generated!', 'success');
+        }
+        
+        function showMessage(msg, type) {
+            let div = document.createElement('div');
+            div.className = 'message ' + type;
+            div.textContent = msg;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 3000);
+        }
+        
+        // Initialize
+        loadData();
+        showReport();
+    </script>
+</body>
+</html>
