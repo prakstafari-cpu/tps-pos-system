@@ -14,10 +14,7 @@
             padding: 20px;
         }
         
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1400px; margin: 0 auto; }
         
         .header {
             background: white;
@@ -28,24 +25,9 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .header h1 {
-            color: #1e3c72;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-        
-        .header p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .date-time {
-            color: #2a5298;
-            margin-top: 10px;
-            font-family: monospace;
-            font-size: 18px;
-            font-weight: bold;
-        }
+        .header h1 { color: #1e3c72; margin-bottom: 10px; }
+        .header p { color: #666; margin-bottom: 15px; }
+        .date-time { color: #2a5298; margin-top: 10px; font-family: monospace; font-size: 18px; }
         
         .stats-bar {
             display: grid;
@@ -62,42 +44,10 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .stat-card h3 {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
+        .stat-card h3 { color: #666; font-size: 14px; margin-bottom: 8px; }
+        .stat-card .number { font-size: 28px; font-weight: bold; color: #1e3c72; }
         
-        .stat-card .number {
-            font-size: 28px;
-            font-weight: bold;
-            color: #1e3c72;
-        }
-        
-        .sync-status {
-            background: #e8f0fe;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        
-        .sync-status.synced {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .sync-status.pending {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         
         .panel {
             background: white;
@@ -113,31 +63,14 @@
             border-bottom: 3px solid #2a5298;
         }
         
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .form-group select,
-        .form-group input {
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+        .form-group select, .form-group input {
             width: 100%;
             padding: 12px;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
             font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group select:focus,
-        .form-group input:focus {
-            outline: none;
-            border-color: #2a5298;
         }
         
         .quantity-control {
@@ -155,18 +88,9 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 20px;
-            font-weight: bold;
-            transition: background 0.3s;
         }
         
-        .quantity-control button:hover {
-            background: #1e3c72;
-        }
-        
-        .quantity-control input {
-            text-align: center;
-            font-size: 18px;
-        }
+        .quantity-control input { text-align: center; font-size: 18px; }
         
         .btn {
             width: 100%;
@@ -179,16 +103,10 @@
             margin-top: 10px;
             font-size: 16px;
             font-weight: bold;
-            transition: transform 0.2s;
         }
         
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: #6c757d;
-        }
+        .btn-secondary { background: #6c757d; }
+        .btn-success { background: #28a745; }
         
         .total {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -199,10 +117,7 @@
             color: white;
         }
         
-        .total .amount {
-            font-size: 32px;
-            font-weight: bold;
-        }
+        .total .amount { font-size: 32px; font-weight: bold; }
         
         .cart-item {
             background: #f8f9fa;
@@ -222,11 +137,6 @@
             padding: 5px 12px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .remove-btn:hover {
-            background: #c82333;
         }
         
         .report-table {
@@ -236,22 +146,13 @@
             font-size: 14px;
         }
         
-        .report-table th,
-        .report-table td {
+        .report-table th, .report-table td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
         }
         
-        .report-table th {
-            background: #f8f9fa;
-            color: #1e3c72;
-            font-weight: bold;
-        }
-        
-        .report-table tr:hover {
-            background: #f8f9fa;
-        }
+        .report-table th { background: #f8f9fa; color: #1e3c72; }
         
         .report-controls {
             display: flex;
@@ -275,11 +176,6 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .report-controls button:hover {
-            background: #1e3c72;
         }
         
         .tabs {
@@ -298,25 +194,11 @@
             font-size: 16px;
             font-weight: bold;
             color: #666;
-            transition: color 0.3s;
         }
         
-        .tab:hover {
-            color: #2a5298;
-        }
-        
-        .tab.active {
-            color: #2a5298;
-            border-bottom: 3px solid #2a5298;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
+        .tab.active { color: #2a5298; border-bottom: 3px solid #2a5298; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
         
         .badge {
             display: inline-block;
@@ -347,7 +229,6 @@
             color: white;
             z-index: 1000;
             animation: slideIn 0.3s;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
         .success { background: #28a745; }
@@ -364,7 +245,6 @@
             padding: 20px 40px;
             border-radius: 10px;
             z-index: 1001;
-            font-size: 18px;
         }
         
         @keyframes slideIn {
@@ -372,26 +252,21 @@
             to { transform: translateX(0); opacity: 1; }
         }
         
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        
+        .inventory-low { background: #fff3cd; }
+        .inventory-critical { background: #f8d7da; }
+        
+        .sync-status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
         }
         
-        .inventory-low {
-            background: #fff3cd;
-        }
-        
-        .inventory-critical {
-            background: #f8d7da;
-        }
-        
-        .sync-btn {
-            background: #28a745;
-            margin-left: 10px;
-        }
-        
-        .sync-btn:hover {
-            background: #218838;
-        }
+        .sync-status.synced { background: #d4edda; color: #155724; }
+        .sync-status.pending { background: #fff3cd; color: #856404; }
     </style>
 </head>
 <body>
@@ -404,22 +279,10 @@
         </div>
 
         <div class="stats-bar">
-            <div class="stat-card">
-                <h3>Total Transactions</h3>
-                <div class="number" id="statTransactions">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Total Revenue</h3>
-                <div class="number" id="statRevenue">$0.00</div>
-            </div>
-            <div class="stat-card">
-                <h3>Items Sold</h3>
-                <div class="number" id="statItems">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Avg Transaction</h3>
-                <div class="number" id="statAvg">$0.00</div>
-            </div>
+            <div class="stat-card"><h3>Total Transactions</h3><div class="number" id="statTransactions">0</div></div>
+            <div class="stat-card"><h3>Total Revenue</h3><div class="number" id="statRevenue">$0.00</div></div>
+            <div class="stat-card"><h3>Items Sold</h3><div class="number" id="statItems">0</div></div>
+            <div class="stat-card"><h3>Avg Transaction</h3><div class="number" id="statAvg">$0.00</div></div>
         </div>
 
         <div class="grid">
@@ -467,14 +330,9 @@
 
             <div class="panel">
                 <h2>🛍️ Current Cart</h2>
-                <div id="cartList">
-                    <p style="text-align:center; color:#999;">Cart is empty</p>
-                </div>
-                <div class="total">
-                    <div>Subtotal</div>
-                    <div class="amount" id="cartTotal">$0.00</div>
-                </div>
-                <button class="btn" onclick="completeSale()">✅ Complete Sale & Save to Cloud</button>
+                <div id="cartList"><p style="text-align:center; color:#999;">Cart is empty</p></div>
+                <div class="total"><div>Subtotal</div><div class="amount" id="cartTotal">$0.00</div></div>
+                <button class="btn" onclick="completeSale()">✅ Complete Sale & Save</button>
                 <button class="btn btn-secondary" onclick="clearCart()">🗑️ Clear Cart</button>
             </div>
         </div>
@@ -482,10 +340,10 @@
         <div class="panel" style="margin-top: 25px;">
             <h2>📊 Management Information System (MIS) Reports</h2>
             <div class="report-controls">
-                <input type="date" id="reportDate" placeholder="Select date">
+                <input type="date" id="reportDate">
                 <button onclick="generateReport()">Generate Report</button>
                 <button onclick="showWeeklyReport()">Last 7 Days</button>
-                <button onclick="syncFromGoogleSheets()" style="background:#28a745;">🔄 Sync from Cloud</button>
+                <button onclick="loadFromGoogleSheets()" class="btn-success" style="background:#28a745;">🔄 Load from Cloud</button>
             </div>
             
             <div class="tabs">
@@ -505,25 +363,19 @@
     <script>
         // ============ CONFIGURATION ============
         // REPLACE WITH YOUR GOOGLE APPS SCRIPT URL
-        const API_URL = https://script.google.com/macros/s/AKfycbxMC3quS1SlblMz76SCPvpmLpAHYoywZANVdBRP-W2Kk6sRaKreUVYd_HXHVAWPOoDRVw/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbwvAsjYSrxirjfILTgsWu64flJAAHs9yDEJnRPnPzHmlG6ZjpdEY4EdQB1cRojMBX3TYw/exec';
         
         // ============ DATA STORES ============
         let products = {};
         let staffList = {};
         let transactions = [];
         let cart = [];
-        let pendingSync = false;
         
         // ============ HELPER FUNCTIONS ============
         
         function formatCurrency(amount) {
-            if (isNaN(amount) || amount === undefined || amount === null) {
-                return '$0.00';
-            }
-            return '$' + amount.toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
+            if (isNaN(amount) || amount === undefined || amount === null) return '$0.00';
+            return '$' + amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         }
         
         function parseNumber(value) {
@@ -555,89 +407,60 @@
             }
         }
         
-        function updateSyncStatus() {
-            const statusDiv = document.getElementById('syncStatus');
-            if (pendingSync) {
-                statusDiv.innerHTML = '⏳ Pending Sync';
-                statusDiv.className = 'sync-status pending';
-            } else {
-                statusDiv.innerHTML = '✅ Synced with Cloud';
-                statusDiv.className = 'sync-status synced';
-            }
-        }
+        // ============ GOOGLE SHEETS FUNCTIONS ============
         
-        // ============ GOOGLE SHEETS INTEGRATION ============
-        
-        async function syncFromGoogleSheets() {
+        async function loadFromGoogleSheets() {
             showLoading(true);
             showMessage('Loading data from Google Sheets...', 'info');
             
             try {
-                // Load Products
-                const productsResponse = await fetch(`${API_URL}?action=getProducts`);
-                const productsData = await productsResponse.json();
+                const response = await fetch(`${API_URL}?action=getData`);
+                const result = await response.json();
                 
-                if (productsData.success && productsData.data.length > 0) {
-                    products = {};
-                    productsData.data.forEach(p => {
-                        products[p.ItemCode] = {
-                            name: p.ItemName,
-                            price: parseNumber(p.UnitPrice),
-                            category: p.Category,
-                            stock: parseNumber(p.StockQuantity),
-                            reorderLevel: parseNumber(p.ReorderLevel),
-                            reorderQty: parseNumber(p.ReorderQuantity)
-                        };
-                    });
-                    updateProductSelect();
-                }
-                
-                // Load Staff
-                const staffResponse = await fetch(`${API_URL}?action=getStaff`);
-                const staffData = await staffResponse.json();
-                
-                if (staffData.success && staffData.data.length > 0) {
-                    staffList = {};
-                    staffData.data.forEach(s => {
-                        staffList[s.StaffID] = s.StaffName;
-                    });
-                    updateStaffSelect();
-                }
-                
-                // Load Transactions
-                const transResponse = await fetch(`${API_URL}?action=getTransactions`);
-                const transData = await transResponse.json();
-                
-                if (transData.success && transData.data.length > 0) {
-                    transactions = transData.data.map(t => ({
-                        id: t.TransactionID,
-                        timestamp: t.Timestamp,
-                        staffId: t.StaffID,
-                        staffName: t.StaffName,
-                        productCode: t.ItemCode,
-                        productName: t.ItemName,
-                        category: t.Category,
-                        qty: parseNumber(t.Quantity),
-                        price: parseNumber(t.UnitPrice),
-                        total: parseNumber(t.TotalPrice),
-                        payment: t.PaymentMethod
-                    }));
+                if (result.success && result.data) {
+                    // Load Products
+                    if (result.data.products && result.data.products.length > 0) {
+                        products = {};
+                        result.data.products.forEach(p => {
+                            products[p.code] = {
+                                name: p.name,
+                                price: parseNumber(p.price),
+                                category: p.category,
+                                stock: parseNumber(p.stock),
+                                reorderLevel: parseNumber(p.reorderLevel),
+                                reorderQty: parseNumber(p.reorderQty)
+                            };
+                        });
+                        updateProductSelect();
+                    }
                     
-                    // Save to localStorage
-                    localStorage.setItem('transactions', JSON.stringify(transactions));
-                    pendingSync = false;
-                    updateSyncStatus();
+                    // Load Staff
+                    if (result.data.staff) {
+                        staffList = result.data.staff;
+                        updateStaffSelect();
+                    }
                     
-                    updateStats();
-                    generateReport();
-                    showMessage(`Loaded ${transactions.length} transactions from Google Sheets!`, 'success');
+                    // Load Transactions
+                    if (result.data.transactions && result.data.transactions.length > 0) {
+                        transactions = result.data.transactions;
+                        localStorage.setItem('transactions', JSON.stringify(transactions));
+                        
+                        updateStats();
+                        generateReport();
+                        document.getElementById('syncStatus').className = 'sync-status synced';
+                        document.getElementById('syncStatus').innerHTML = '✅ Synced with Cloud';
+                        
+                        showMessage(`Loaded ${transactions.length} transactions from Google Sheets!`, 'success');
+                    } else {
+                        showMessage('No transactions found in Google Sheets.', 'info');
+                    }
                 } else {
-                    showMessage('No transactions found in Google Sheets.', 'info');
+                    showMessage('Failed to load data: ' + (result.message || 'Unknown error'), 'error');
                 }
                 
             } catch (error) {
-                console.error('Error loading from Google Sheets:', error);
-                showMessage('Failed to load from Google Sheets. Check API URL.', 'error');
+                console.error('Error:', error);
+                showMessage('Failed to connect to Google Sheets. Check API URL.', 'error');
                 
                 // Fallback to local storage
                 const saved = localStorage.getItem('transactions');
@@ -645,6 +468,7 @@
                     transactions = JSON.parse(saved);
                     updateStats();
                     generateReport();
+                    showMessage('Using locally saved data.', 'info');
                 }
             }
             
@@ -668,27 +492,6 @@
                 
             } catch (error) {
                 console.error('Save error:', error);
-                return false;
-            }
-        }
-        
-        async function saveMultipleToCloud(transactionsList) {
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    mode: 'cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        action: 'saveMultiple',
-                        transactions: transactionsList
-                    })
-                });
-                
-                const result = await response.json();
-                return result.success;
-                
-            } catch (error) {
-                console.error('Batch save error:', error);
                 return false;
             }
         }
@@ -723,13 +526,10 @@
             if (code && products[code]) {
                 document.getElementById('price').value = formatCurrency(products[code].price);
                 document.getElementById('currentStock').value = products[code].stock + ' units';
-                
                 if (products[code].stock <= products[code].reorderLevel) {
                     document.getElementById('currentStock').style.color = '#dc3545';
-                    document.getElementById('currentStock').style.fontWeight = 'bold';
                 } else {
                     document.getElementById('currentStock').style.color = '#28a745';
-                    document.getElementById('currentStock').style.fontWeight = 'normal';
                 }
             } else {
                 document.getElementById('price').value = '';
@@ -748,14 +548,8 @@
             const productCode = document.getElementById('productSelect').value;
             const qty = parseInt(document.getElementById('quantity').value);
             
-            if (!staffId) {
-                showMessage('Please select a staff member', 'error');
-                return;
-            }
-            if (!productCode) {
-                showMessage('Please select a product', 'error');
-                return;
-            }
+            if (!staffId) { showMessage('Please select a staff member', 'error'); return; }
+            if (!productCode) { showMessage('Please select a product', 'error'); return; }
             
             const product = products[productCode];
             if (qty > product.stock) {
@@ -795,18 +589,11 @@
                 total += item.total;
                 html += `
                     <div class="cart-item">
-                        <div>
-                            <strong>${item.productName}</strong><br>
-                            Qty: ${item.qty} × ${formatCurrency(item.price)}
-                        </div>
-                        <div>
-                            <strong>${formatCurrency(item.total)}</strong>
-                            <button class="remove-btn" onclick="removeFromCart(${item.id})">✕</button>
-                        </div>
+                        <div><strong>${item.productName}</strong><br>Qty: ${item.qty} × ${formatCurrency(item.price)}</div>
+                        <div><strong>${formatCurrency(item.total)}</strong><button class="remove-btn" onclick="removeFromCart(${item.id})">✕</button></div>
                     </div>
                 `;
             });
-            
             cartDiv.innerHTML = html;
             document.getElementById('cartTotal').innerHTML = formatCurrency(total);
         }
@@ -830,7 +617,6 @@
             
             const timestamp = new Date().toISOString();
             let savedCount = 0;
-            const newTransactions = [];
             
             showLoading(true);
             
@@ -849,51 +635,25 @@
                     productCode: item.productCode,
                     productName: item.productName,
                     category: item.category,
-                    quantity: item.qty,
-                    unitPrice: item.price,
-                    totalPrice: item.total,
-                    paymentMethod: item.payment
+                    qty: item.qty,
+                    price: item.price,
+                    total: item.total,
+                    payment: item.payment
                 };
                 
                 // Update local stock
                 products[item.productCode].stock -= item.qty;
                 
                 // Add to local transactions
-                const localTransaction = {
-                    id: transaction.id,
-                    timestamp: transaction.timestamp,
-                    staffId: transaction.staffId,
-                    staffName: transaction.staffName,
-                    productCode: transaction.productCode,
-                    productName: transaction.productName,
-                    category: transaction.category,
-                    qty: transaction.quantity,
-                    price: transaction.unitPrice,
-                    total: transaction.totalPrice,
-                    payment: transaction.paymentMethod
-                };
+                transactions.unshift(transaction);
                 
-                transactions.unshift(localTransaction);
-                newTransactions.push(transaction);
+                // Save to cloud
+                const saved = await saveTransactionToCloud(transaction);
+                if (saved) savedCount++;
             }
             
-            // Save to localStorage
+            // Save to local storage
             localStorage.setItem('transactions', JSON.stringify(transactions));
-            
-            // Save to Google Sheets
-            showMessage('Saving to cloud...', 'info');
-            const saved = await saveMultipleToCloud(newTransactions);
-            
-            if (saved) {
-                savedCount = newTransactions.length;
-                pendingSync = false;
-                updateSyncStatus();
-                showMessage(`Successfully saved ${savedCount} transactions to cloud!`, 'success');
-            } else {
-                pendingSync = true;
-                updateSyncStatus();
-                showMessage(`Transactions saved locally only. Click "Sync from Cloud" to upload later.`, 'warning');
-            }
             
             const totalSale = cart.reduce((sum, i) => sum + i.total, 0);
             clearCart();
@@ -902,7 +662,16 @@
             generateReport();
             
             showLoading(false);
-            showMessage(`Sale complete! Total: ${formatCurrency(totalSale)}`, 'success');
+            
+            if (savedCount > 0) {
+                document.getElementById('syncStatus').className = 'sync-status synced';
+                document.getElementById('syncStatus').innerHTML = '✅ Synced with Cloud';
+                showMessage(`Sale complete! Total: ${formatCurrency(totalSale)} (${savedCount} saved to cloud)`, 'success');
+            } else {
+                document.getElementById('syncStatus').className = 'sync-status pending';
+                document.getElementById('syncStatus').innerHTML = '⚠️ Offline - Not Synced';
+                showMessage(`Sale complete! Total: ${formatCurrency(totalSale)} (Saved locally only)`, 'warning');
+            }
         }
         
         // ============ REPORT FUNCTIONS ============
@@ -936,7 +705,7 @@
             if (filtered.length === 0) {
                 document.getElementById('salesTab').innerHTML = `
                     <div class="summary-box">
-                        <p style="text-align:center;">No transactions found. Click "Sync from Cloud" to load data.</p>
+                        <p style="text-align:center;">No transactions found. Click "Load from Cloud" to fetch data.</p>
                     </div>
                 `;
                 return;
@@ -977,37 +746,13 @@
                 
                 <h3>🏆 Top Selling Products</h3>
                 <table class="report-table">
-                    <thead>
-                        <tr><th>Product</th><th>Quantity Sold</th><th>Transactions</th><th>Revenue</th>\\
-                    </thead>
+                    <thead><tr><th>Product</th><th>Quantity Sold</th><th>Transactions</th><th>Revenue</th></tr></thead>
                     <tbody>
                         ${Object.entries(productStats).sort((a,b) => b[1].revenue - a[1].revenue).slice(0, 10).map(([name, data]) => `
-                            <tr>
-                                <td><strong>${name}</strong></td>
-                                <td>${data.qty}</td>
-                                <td>${data.transactions}</td>
-                                <td><strong>${formatCurrency(data.revenue)}</strong></td>
-                            </tr>
+                            <tr><td><strong>${name}</strong></td><td>${data.qty}</td><td>${data.transactions}</td><td><strong>${formatCurrency(data.revenue)}</strong></td></tr>
                         `).join('')}
                     </tbody>
-                \\
-                
-                <h3 style="margin-top:20px;">💳 Payment Method Distribution</h3>
-                <table class="report-table">
-                    <thead>
-                        <tr><th>Payment Method</th><th>Transactions</th><th>Revenue</th><th>Percentage</th></tr>
-                    </thead>
-                    <tbody>
-                        ${Object.entries(paymentStats).map(([method, data]) => `
-                            <tr>
-                                <td><span class="badge badge-${method.toLowerCase().replace(' ', '-')}">${method}</span></td>
-                                <td>${data.count}</td>
-                                <td>${formatCurrency(data.revenue)}</td>
-                                <td>${((data.revenue / totalRevenue) * 100).toFixed(1)}%</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                \\
+                </table>
             `;
             
             document.getElementById('salesTab').innerHTML = html;
@@ -1036,9 +781,7 @@
             let html = `
                 <h3>📂 Sales by Category</h3>
                 <table class="report-table">
-                    <thead>
-                        <tr><th>Category</th><th>Products</th><th>Units Sold</th><th>Revenue</th><th>% of Total</th><th>Avg/Transaction</th></tr>
-                    </thead>
+                    <thead><tr><th>Category</th><th>Products</th><th>Units Sold</th><th>Revenue</th><th>% of Total</th></tr></thead>
                     <tbody>
                         ${Object.entries(categoryStats).sort((a,b) => b[1].revenue - a[1].revenue).map(([category, data]) => `
                             <tr>
@@ -1047,23 +790,10 @@
                                 <td>${data.qty}</td>
                                 <td><strong>${formatCurrency(data.revenue)}</strong></td>
                                 <td>${((data.revenue / totalRevenue) * 100).toFixed(1)}%</td>
-                                <td>${formatCurrency(data.revenue / data.transactions)}</td>
                             </tr>
                         `).join('')}
                     </tbody>
-                 \\
-                
-                <div class="summary-box">
-                    <h3>🎯 Category Insights</h3>
-                    ${(() => {
-                        const topCategory = Object.entries(categoryStats).sort((a,b) => b[1].revenue - a[1].revenue)[0];
-                        const fastMoving = Object.entries(categoryStats).sort((a,b) => b[1].qty - a[1].qty)[0];
-                        return `
-                            <p><strong>Top Revenue Category:</strong> ${topCategory[0]} (${formatCurrency(topCategory[1].revenue)})</p>
-                            <p><strong>Fastest Moving Category:</strong> ${fastMoving[0]} (${fastMoving[1].qty} units sold)</p>
-                        `;
-                    })()}
-                </div>
+                </table>
             `;
             
             document.getElementById('categoryTab').innerHTML = html;
@@ -1097,63 +827,23 @@
             `;
             
             if (critical.length > 0) {
-                html += `
-                    <h3 style="color:#dc3545;">⚠️ CRITICAL - Out of Stock</h3>
-                    <table class="report-table">
-                        <thead><tr><th>Product</th><th>Category</th><th>Status</th><th>Reorder Qty</th><th>Loss Potential</th></tr></thead>
-                        <tbody>
-                            ${critical.map(p => `
-                                <tr class="inventory-critical">
-                                    <td><strong>${p.name}</strong></td>
-                                    <td>${p.category}</td>
-                                    <td style="color:#dc3545;">0 units</td>
-                                    <td>${p.reorderQty} units</td>
-                                    <td>${formatCurrency(p.reorderQty * p.price)}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                `;
+                html += `<h3 style="color:#dc3545;">⚠️ CRITICAL - Out of Stock</h3>
+                <table class="report-table"><thead><tr><th>Product</th><th>Category</th><th>Status</th></tr></thead><tbody>
+                    ${critical.map(p => `<tr class="inventory-critical"><td><strong>${p.name}</strong></td><td>${p.category}</td><td style="color:#dc3545;">0 units</td></tr>`).join('')}
+                </tbody></table>`;
             }
             
             if (lowStock.length > 0) {
-                html += `
-                    <h3 style="color:#ffc107;">📋 Reorder Recommendations</h3>
-                    <table class="report-table">
-                        <thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Reorder Level</th><th>Recommended Order</th><th>Estimated Cost</th></tr></thead>
-                        <tbody>
-                            ${lowStock.map(p => `
-                                <tr class="inventory-low">
-                                    <td><strong>${p.name}</strong></td>
-                                    <td>${p.category}</td>
-                                    <td>${p.stock} units</td>
-                                    <td>${p.reorderLevel} units</td>
-                                    <td>${p.reorderQty} units</td>
-                                    <td>${formatCurrency(p.reorderQty * p.price)}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                `;
+                html += `<h3 style="color:#ffc107;">📋 Reorder Recommendations</h3>
+                <table class="report-table"><thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Reorder Level</th><th>Recommended Order</th></tr></thead><tbody>
+                    ${lowStock.map(p => `<tr class="inventory-low"><td><strong>${p.name}</strong></td><td>${p.category}</td><td>${p.stock} units</td><td>${p.reorderLevel} units</td><td>${p.reorderQty} units</td></tr>`).join('')}
+                </tbody></table>`;
             }
             
-            html += `
-                <h3 style="margin-top:20px;">✅ Healthy Stock Levels</h3>
-                <table class="report-table">
-                    <thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Stock Value</th><th>Status</th></tr></thead>
-                    <tbody>
-                        ${healthy.slice(0, 10).map(p => `
-                            <tr>
-                                <td>${p.name}</td>
-                                <td>${p.category}</td>
-                                <td>${p.stock} units</td>
-                                <td>${formatCurrency(p.stock * p.price)}</td>
-                                <td><span class="badge" style="background:#28a745;">OK</span></td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
+            html += `<h3 style="margin-top:20px;">✅ Healthy Stock Levels</h3>
+            <table class="report-table"><thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Stock Value</th></tr></thead><tbody>
+                ${healthy.slice(0, 10).map(p => `<tr><td>${p.name}</td><td>${p.category}</td><td>${p.stock} units</td><td>${formatCurrency(p.stock * p.price)}</td></tr>`).join('')}
+            </tbody></table>`;
             
             document.getElementById('inventoryTab').innerHTML = html;
         }
@@ -1179,9 +869,7 @@
             let html = `
                 <h3>👥 Staff Performance Report</h3>
                 <table class="report-table">
-                    <thead>
-                        <tr><th>Staff Member</th><th>Transactions</th><th>Items Sold</th><th>Revenue</th><th>Avg/Transaction</th><th>% of Total</th></tr>
-                    </thead>
+                    <thead><tr><th>Staff Member</th><th>Transactions</th><th>Items Sold</th><th>Revenue</th><th>% of Total</th></tr></thead>
                     <tbody>
                         ${Object.entries(staffStats).sort((a,b) => b[1].revenue - a[1].revenue).map(([name, data]) => `
                             <tr>
@@ -1189,24 +877,11 @@
                                 <td>${data.count}</td>
                                 <td>${data.items}</td>
                                 <td><strong>${formatCurrency(data.revenue)}</strong></td>
-                                <td>${formatCurrency(data.revenue / data.count)}</td>
                                 <td>${((data.revenue / totalRevenue) * 100).toFixed(1)}%</td>
                             </tr>
                         `).join('')}
                     </tbody>
                 </table>
-                
-                <div class="summary-box">
-                    <h3>🏆 Staff Recognition</h3>
-                    ${(() => {
-                        const topRevenue = Object.entries(staffStats).sort((a,b) => b[1].revenue - a[1].revenue)[0];
-                        const topItems = Object.entries(staffStats).sort((a,b) => b[1].items - a[1].items)[0];
-                        return `
-                            <p><strong>🏅 Top Revenue Generator:</strong> ${topRevenue[0]} (${formatCurrency(topRevenue[1].revenue)})</p>
-                            <p><strong>📦 Most Items Sold:</strong> ${topItems[0]} (${topItems[1].items} units)</p>
-                        `;
-                    })()}
-                </div>
             `;
             
             document.getElementById('staffTab').innerHTML = html;
@@ -1215,13 +890,12 @@
         function showWeeklyReport() {
             document.getElementById('reportDate').value = '';
             generateReport();
-            showMessage('Showing last 7 days of data', 'info');
+            showMessage('Showing all data', 'info');
         }
         
         function switchTab(tabName) {
             document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(`${tabName}Tab`).classList.add('active');
         }
@@ -1229,18 +903,7 @@
         // ============ INITIALIZATION ============
         
         async function init() {
-            // Try to load from Google Sheets first
-            await syncFromGoogleSheets();
-            
-            // If that fails, load from local storage
-            if (transactions.length === 0) {
-                const saved = localStorage.getItem('transactions');
-                if (saved) {
-                    transactions = JSON.parse(saved);
-                    updateStats();
-                    generateReport();
-                }
-            }
+            await loadFromGoogleSheets();
         }
         
         init();
