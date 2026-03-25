@@ -402,20 +402,20 @@
 
     <script>
         // ============ GOOGLE SHEETS CONFIGURATION ============
-        const GOOGLE_SHEETS_API = 'https://script.google.com/macros/s/AKfycbxgkYgL1iMtzKcYfrFsdXNlpZVVtyR8ka-HPGlmgYU-4lJg6PIMC-VDlecu0NmjBfM/exec';
+        const GOOGLE_SHEETS_API = 'https://script.google.com/macros/s/AKfycbwnBMmm3e-QwOTLacDtpvCJWfes_xL8APDE34pQbiLk4pungMV20dMsnt8YXb7Xy8qY/exec';
         
         // ============ PRODUCT DATABASE WITH INVENTORY ============
         const products = {
-            'PRD001': { name: 'Laptop Pro 15"', price: 1299.99, category: 'Electronics', stock: 45, reorderLevel: 20, reorderQty: 30 },
-            'PRD002': { name: 'Wireless Mouse', price: 29.99, category: 'Electronics', stock: 120, reorderLevel: 50, reorderQty: 100 },
-            'PRD003': { name: 'Mechanical Keyboard', price: 89.99, category: 'Electronics', stock: 85, reorderLevel: 40, reorderQty: 60 },
-            'PRD004': { name: '27" Monitor', price: 349.99, category: 'Electronics', stock: 32, reorderLevel: 15, reorderQty: 25 },
-            'PRD005': { name: 'Office Chair', price: 199.99, category: 'Furniture', stock: 28, reorderLevel: 12, reorderQty: 20 },
-            'PRD006': { name: 'Standing Desk', price: 399.99, category: 'Furniture', stock: 18, reorderLevel: 8, reorderQty: 15 },
-            'PRD007': { name: 'Coffee Maker', price: 79.99, category: 'Appliances', stock: 42, reorderLevel: 20, reorderQty: 30 },
-            'PRD008': { name: 'Bluetooth Speaker', price: 59.99, category: 'Electronics', stock: 65, reorderLevel: 30, reorderQty: 50 },
-            'PRD009': { name: 'USB-C Hub', price: 39.99, category: 'Accessories', stock: 95, reorderLevel: 40, reorderQty: 60 },
-            'PRD010': { name: 'External SSD 1TB', price: 149.99, category: 'Storage', stock: 52, reorderLevel: 25, reorderQty: 40 }
+            'PRD001': { name: 'Laptop Pro 15"', price: 195000, category: 'Electronics', stock: 400, reorderLevel: 20, reorderQty: 30 },
+            'PRD002': { name: 'Wireless Mouse', price: 2000, category: 'Electronics', stock: 400, reorderLevel: 50, reorderQty: 100 },
+            'PRD003': { name: 'Mechanical Keyboard', price: 1500, category: 'Electronics', stock: 350, reorderLevel: 40, reorderQty: 60 },
+            'PRD004': { name: '27" Monitor', price: 29000, category: 'Electronics', stock: 350, reorderLevel: 15, reorderQty: 25 },
+            'PRD005': { name: 'Office Chair', price: 26000, category: 'Furniture', stock: 300, reorderLevel: 12, reorderQty: 20 },
+            'PRD006': { name: 'Standing Desk', price: 35000, category: 'Furniture', stock: 300, reorderLevel: 8, reorderQty: 15 },
+            'PRD007': { name: 'Coffee Maker', price: 19000, category: 'Appliances', stock: 380, reorderLevel: 20, reorderQty: 30 },
+            'PRD008': { name: 'Bluetooth Speaker', price: 12000, category: 'Electronics', stock: 350, reorderLevel: 30, reorderQty: 50 },
+            'PRD009': { name: 'USB-C Hub', price: 9500, category: 'Accessories', stock: 400, reorderLevel: 40, reorderQty: 60 },
+            'PRD010': { name: 'External SSD 1TB', price: 30000, category: 'Storage', stock: 325, reorderLevel: 25, reorderQty: 40 }
         };
         
         const staffNames = {
