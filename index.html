@@ -21,19 +21,9 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .header h1 { 
-            color: #1e3c72; 
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
+        .header h1 { color: #1e3c72; margin-bottom: 10px; }
         .header p { color: #666; margin-bottom: 15px; }
-        .date-time { 
-            color: #2a5298; 
-            margin-top: 10px; 
-            font-family: monospace;
-            font-size: 18px;
-            font-weight: bold;
-        }
+        .date-time { color: #2a5298; margin-top: 10px; font-family: monospace; font-size: 18px; }
         .stats-bar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -49,7 +39,6 @@
         }
         .stat-card h3 { color: #666; font-size: 14px; margin-bottom: 8px; }
         .stat-card .number { font-size: 28px; font-weight: bold; color: #1e3c72; }
-        .stat-card.warning .number { color: #dc3545; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         .panel {
             background: white;
@@ -64,23 +53,13 @@
             border-bottom: 3px solid #2a5298;
         }
         .form-group { margin-bottom: 20px; }
-        .form-group label { 
-            display: block; 
-            margin-bottom: 8px; 
-            font-weight: bold;
-            color: #333;
-        }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
         .form-group select, .form-group input {
             width: 100%;
             padding: 12px;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
             font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        .form-group select:focus, .form-group input:focus {
-            outline: none;
-            border-color: #2a5298;
         }
         .quantity-control {
             display: flex;
@@ -96,14 +75,8 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 20px;
-            font-weight: bold;
-            transition: background 0.3s;
         }
-        .quantity-control button:hover { background: #1e3c72; }
-        .quantity-control input {
-            text-align: center;
-            font-size: 18px;
-        }
+        .quantity-control input { text-align: center; font-size: 18px; }
         .btn {
             width: 100%;
             padding: 14px;
@@ -115,12 +88,8 @@
             margin-top: 10px;
             font-size: 16px;
             font-weight: bold;
-            transition: transform 0.2s;
         }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-danger { background: #dc3545; }
         .btn-secondary { background: #6c757d; }
-        .btn-warning { background: #ffc107; color: #333; }
         .total {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             padding: 20px;
@@ -147,9 +116,7 @@
             padding: 5px 12px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
         }
-        .remove-btn:hover { background: #c82333; }
         .report-table {
             width: 100%;
             border-collapse: collapse;
@@ -161,20 +128,7 @@
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
         }
-        .report-table th { 
-            background: #f8f9fa;
-            color: #1e3c72;
-            font-weight: bold;
-        }
-        .report-table tr:hover { background: #f8f9fa; }
-        .inventory-low {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-        }
-        .inventory-critical {
-            background: #f8d7da;
-            border-left: 4px solid #dc3545;
-        }
+        .report-table th { background: #f8f9fa; color: #1e3c72; }
         .message {
             position: fixed;
             top: 20px;
@@ -184,12 +138,10 @@
             color: white;
             z-index: 1000;
             animation: slideIn 0.3s;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         .success { background: #28a745; }
         .error { background: #dc3545; }
         .info { background: #17a2b8; }
-        .warning { background: #ffc107; color: #333; }
         .loading {
             position: fixed;
             top: 50%;
@@ -200,15 +152,12 @@
             padding: 20px 40px;
             border-radius: 10px;
             z-index: 1001;
-            font-size: 18px;
         }
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
-        @media (max-width: 768px) { 
-            .grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
         .report-controls {
             display: flex;
             gap: 10px;
@@ -230,7 +179,6 @@
             border-radius: 8px;
             cursor: pointer;
         }
-        .report-controls button:hover { background: #1e3c72; }
         .badge {
             display: inline-block;
             padding: 3px 8px;
@@ -242,19 +190,7 @@
         .badge-credit-card { background: #17a2b8; color: white; }
         .badge-debit-card { background: #6c757d; color: white; }
         .badge-mobile-payment { background: #ffc107; color: #333; }
-        .category-summary {
-            background: #e8f0fe;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-        }
-        .reorder-alert {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-        }
+        .category-summary { background: #e8f0fe; padding: 15px; border-radius: 8px; margin: 15px 0; }
         .tabs {
             display: flex;
             gap: 10px;
@@ -271,16 +207,9 @@
             font-weight: bold;
             color: #666;
         }
-        .tab.active {
-            color: #2a5298;
-            border-bottom: 3px solid #2a5298;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
+        .tab.active { color: #2a5298; border-bottom: 3px solid #2a5298; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
     </style>
 </head>
 <body>
@@ -291,32 +220,14 @@
             <div class="date-time" id="datetime"></div>
         </div>
 
-        <!-- Statistics Bar -->
-        <div class="stats-bar" id="statsBar">
-            <div class="stat-card">
-                <h3>Total Transactions</h3>
-                <div class="number" id="statTransactions">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Total Revenue</h3>
-                <div class="number" id="statRevenue">$0.00</div>
-            </div>
-            <div class="stat-card">
-                <h3>Items Sold</h3>
-                <div class="number" id="statItems">0</div>
-            </div>
-            <div class="stat-card">
-                <h3>Avg Transaction</h3>
-                <div class="number" id="statAvg">$0.00</div>
-            </div>
-            <div class="stat-card" id="reorderAlertCard" style="display:none;">
-                <h3>⚠️ Reorder Alert</h3>
-                <div class="number" id="reorderCount">0</div>
-            </div>
+        <div class="stats-bar">
+            <div class="stat-card"><h3>Total Transactions</h3><div class="number" id="statTransactions">0</div></div>
+            <div class="stat-card"><h3>Total Revenue</h3><div class="number" id="statRevenue">$0.00</div></div>
+            <div class="stat-card"><h3>Items Sold</h3><div class="number" id="statItems">0</div></div>
+            <div class="stat-card"><h3>Avg Transaction</h3><div class="number" id="statAvg">$0.00</div></div>
         </div>
 
         <div class="grid">
-            <!-- POS Panel -->
             <div class="panel">
                 <h2>🛒 New Transaction</h2>
                 <div class="form-group">
@@ -364,27 +275,22 @@
                 <button class="btn" onclick="addToCart()">➕ Add to Cart</button>
             </div>
 
-            <!-- Cart Panel -->
             <div class="panel">
                 <h2>🛍️ Current Cart</h2>
                 <div id="cartList"><p style="text-align:center; color:#999;">Cart is empty</p></div>
-                <div class="total">
-                    <div>Subtotal</div>
-                    <div class="amount" id="cartTotal">$0.00</div>
-                </div>
+                <div class="total"><div>Subtotal</div><div class="amount" id="cartTotal">$0.00</div></div>
                 <button class="btn" onclick="completeSale()">✅ Complete Sale</button>
                 <button class="btn btn-secondary" onclick="clearCart()">🗑️ Clear Cart</button>
             </div>
         </div>
 
-        <!-- MIS Reports Panel with Tabs -->
         <div class="panel" style="margin-top: 25px;">
             <h2>📊 Management Information System (MIS) Reports</h2>
             <div class="report-controls">
-                <input type="date" id="reportDate" placeholder="Select date">
+                <input type="date" id="reportDate">
                 <button onclick="showReport()">Generate Report</button>
                 <button onclick="showWeeklyReport()">Last 7 Days Report</button>
-                <button onclick="refreshData()">🔄 Refresh Data</button>
+                <button onclick="syncFromGoogleSheets()">🔄 Sync from Google Sheets</button>
             </div>
             
             <div class="tabs">
@@ -402,12 +308,11 @@
     </div>
 
     <script>
-        // ============ GOOGLE SHEETS CONFIGURATION ============
-        // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT URL
-        const GOOGLE_SHEETS_API = 'https://script.google.com/macros/s/AKfycbzAxbHF6SAeQhdooqwgC4PFpwzM41tzM_YxUjhdb-fbNA2ceMyj7RHzYbJKIAD-Kos/exec';
+        // ============ GOOGLE SHEETS API URL - REPLACE WITH YOUR URL ============
+        const GOOGLE_SHEETS_API = 'https://script.google.com/macros/s/AKfycbyrgfHWGaKOJXWVsm8c3eZRF8NCWn92N8z50eueQFbNGnv_7S7gvONcqQSuLzbTuIFY/exec';
         
-        // ============ PRODUCT DATABASE WITH UPDATED PRICES ============
-        const products = {
+        // ============ PRODUCT DATABASE ============
+        let products = {
             'PRD001': { name: 'Laptop Pro 15"', price: 195000, category: 'Electronics', stock: 45, reorderLevel: 20, reorderQty: 30 },
             'PRD002': { name: 'Wireless Mouse', price: 2000, category: 'Electronics', stock: 120, reorderLevel: 50, reorderQty: 100 },
             'PRD003': { name: 'Mechanical Keyboard', price: 1500, category: 'Electronics', stock: 85, reorderLevel: 40, reorderQty: 60 },
@@ -432,22 +337,13 @@
         
         let cart = [];
         let transactions = [];
-        let isLoading = false;
         
-        // Helper function to format currency (Guyana Dollar format)
         function formatCurrency(amount) {
-            if (isNaN(amount) || amount === undefined || amount === null) {
-                return '$0.00';
-            }
-            // Format with commas for thousands
+            if (isNaN(amount) || amount === undefined || amount === null) return '$0.00';
             return '$' + amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         }
         
-        // Helper function to parse number safely
-        function safeParseNumber(value) {
-            if (value === undefined || value === null || value === '') {
-                return 0;
-            }
+        function safeNumber(value) {
             const num = parseFloat(value);
             return isNaN(num) ? 0 : num;
         }
@@ -456,220 +352,20 @@
             const select = document.getElementById('productSelect');
             select.innerHTML = '<option value="">Select Product</option>';
             for (const [code, product] of Object.entries(products)) {
-                const stockStatus = product.stock <= product.reorderLevel ? '⚠️' : '';
-                select.innerHTML += `<option value="${code}">${product.name} - ${formatCurrency(product.price)} ${stockStatus} (Stock: ${product.stock})</option>`;
+                select.innerHTML += `<option value="${code}">${product.name} - ${formatCurrency(product.price)} (Stock: ${product.stock})</option>`;
             }
         }
         
         document.getElementById('productSelect').onchange = function() {
             const code = this.value;
             if (code && products[code]) {
-                const price = safeParseNumber(products[code].price);
-                document.getElementById('price').value = formatCurrency(price);
+                document.getElementById('price').value = formatCurrency(products[code].price);
                 document.getElementById('currentStock').value = products[code].stock + ' units';
-                
-                if (products[code].stock <= products[code].reorderLevel) {
-                    document.getElementById('currentStock').style.color = '#dc3545';
-                    document.getElementById('currentStock').style.fontWeight = 'bold';
-                } else {
-                    document.getElementById('currentStock').style.color = '#28a745';
-                    document.getElementById('currentStock').style.fontWeight = 'normal';
-                }
             } else {
                 document.getElementById('price').value = '';
                 document.getElementById('currentStock').value = '';
             }
         };
-        
-        function updateInventoryAlerts() {
-            const lowStockItems = [];
-            const criticalItems = [];
-            
-            for (const [code, product] of Object.entries(products)) {
-                if (product.stock <= 0) {
-                    criticalItems.push(product.name);
-                } else if (product.stock <= product.reorderLevel) {
-                    lowStockItems.push(product.name);
-                }
-            }
-            
-            const alertCard = document.getElementById('reorderAlertCard');
-            const reorderCount = document.getElementById('reorderCount');
-            
-            if (lowStockItems.length > 0 || criticalItems.length > 0) {
-                alertCard.style.display = 'block';
-                reorderCount.innerHTML = (lowStockItems.length + criticalItems.length);
-                reorderCount.style.color = criticalItems.length > 0 ? '#dc3545' : '#ffc107';
-            } else {
-                alertCard.style.display = 'none';
-            }
-            
-            return { lowStockItems, criticalItems };
-        }
-        
-        async function loadTransactionsFromSheets() {
-            if (isLoading) return;
-            isLoading = true;
-            showLoading(true);
-            
-            try {
-                const response = await fetch(`${GOOGLE_SHEETS_API}?action=getAll`, {
-                    method: 'GET',
-                    mode: 'cors'
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.transactions && data.transactions.length > 0) {
-                        transactions = data.transactions;
-                        transactions.forEach(t => {
-                            t.qty = safeParseNumber(t.qty);
-                            t.price = safeParseNumber(t.price);
-                            t.total = safeParseNumber(t.total);
-                        });
-                        recalculateInventoryFromTransactions();
-                        localStorage.setItem('tps_transactions_backup', JSON.stringify(transactions));
-                        console.log(`Loaded ${transactions.length} transactions from Google Sheets`);
-                        updateStatsAndReport();
-                        showMessage(`Loaded ${transactions.length} transactions from database`, 'success');
-                    } else {
-                        loadFromLocalStorage();
-                    }
-                } else {
-                    loadFromLocalStorage();
-                }
-            } catch (error) {
-                console.error('Error loading from Google Sheets:', error);
-                loadFromLocalStorage();
-                showMessage('Using local data - Google Sheets connection failed', 'info');
-            } finally {
-                isLoading = false;
-                showLoading(false);
-            }
-        }
-        
-        function loadFromLocalStorage() {
-            const saved = localStorage.getItem('tps_transactions');
-            if (saved) {
-                transactions = JSON.parse(saved);
-                transactions.forEach(t => {
-                    t.qty = safeParseNumber(t.qty);
-                    t.price = safeParseNumber(t.price);
-                    t.total = safeParseNumber(t.total);
-                });
-                console.log(`Loaded ${transactions.length} transactions from local storage`);
-            } else {
-                initializeSampleData();
-            }
-            recalculateInventoryFromTransactions();
-            updateStatsAndReport();
-        }
-        
-        function recalculateInventoryFromTransactions() {
-            // Reset inventory to initial values
-            const initialStock = {
-                'PRD001': 45, 'PRD002': 120, 'PRD003': 85, 'PRD004': 32, 'PRD005': 28,
-                'PRD006': 18, 'PRD007': 42, 'PRD008': 65, 'PRD009': 95, 'PRD010': 52
-            };
-            
-            for (const [code, product] of Object.entries(products)) {
-                products[code].stock = initialStock[code];
-            }
-            
-            // Subtract all sold quantities
-            for (const t of transactions) {
-                if (products[t.productCode]) {
-                    const qty = safeParseNumber(t.qty);
-                    products[t.productCode].stock -= qty;
-                    if (products[t.productCode].stock < 0) products[t.productCode].stock = 0;
-                }
-            }
-            
-            updateProductSelect();
-            updateInventoryAlerts();
-            saveInventoryToLocalStorage();
-        }
-        
-        function saveInventoryToLocalStorage() {
-            const inventoryData = {};
-            for (const [code, product] of Object.entries(products)) {
-                inventoryData[code] = { stock: product.stock };
-            }
-            localStorage.setItem('tps_inventory', JSON.stringify(inventoryData));
-        }
-        
-        async function saveTransactionToSheets(transaction) {
-            try {
-                const response = await fetch(GOOGLE_SHEETS_API, {
-                    method: 'POST',
-                    mode: 'cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        action: 'save', 
-                        data: transaction 
-                    })
-                });
-                
-                if (response.ok) {
-                    console.log('Transaction saved to Google Sheets');
-                    return true;
-                } else {
-                    throw new Error('Failed to save');
-                }
-            } catch (error) {
-                console.error('Error saving to Google Sheets:', error);
-                return false;
-            }
-        }
-        
-        function initializeSampleData() {
-            if (transactions.length > 0) return;
-            
-            console.log('Initializing sample data with 1000+ transactions...');
-            
-            const startDate = new Date();
-            startDate.setDate(startDate.getDate() - 7);
-            startDate.setHours(9, 0, 0, 0);
-            
-            const productList = Object.keys(products);
-            const staffList = Object.keys(staffNames);
-            
-            for (let i = 0; i < 1100; i++) {
-                const randomDate = new Date(startDate);
-                randomDate.setMinutes(randomDate.getMinutes() + Math.random() * 10080);
-                
-                const staffId = staffList[Math.floor(Math.random() * staffList.length)];
-                const productCode = productList[Math.floor(Math.random() * productList.length)];
-                const product = products[productCode];
-                const qty = Math.floor(Math.random() * 5) + 1;
-                const paymentMethod = paymentMethods[Math.floor(Math.random() * paymentMethods.length)];
-                const price = safeParseNumber(product.price);
-                const total = price * qty;
-                
-                transactions.push({
-                    id: 'TXN' + Date.now() + i + Math.random(),
-                    timestamp: randomDate.toISOString(),
-                    staffId: staffId,
-                    staffName: staffNames[staffId],
-                    productCode: productCode,
-                    productName: product.name,
-                    category: product.category,
-                    qty: qty,
-                    price: price,
-                    total: total,
-                    payment: paymentMethod
-                });
-            }
-            
-            transactions.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
-            saveToLocalStorage();
-            recalculateInventoryFromTransactions();
-            console.log(`Initialized ${transactions.length} sample transactions`);
-        }
-        
-        function saveToLocalStorage() {
-            localStorage.setItem('tps_transactions', JSON.stringify(transactions));
-        }
         
         function updateDateTime() {
             document.getElementById('datetime').innerHTML = new Date().toLocaleString();
@@ -692,8 +388,6 @@
             if (!productCode) { showMessage('Please select a product', 'error'); return; }
             
             const product = products[productCode];
-            const price = safeParseNumber(product.price);
-            
             if (qty > product.stock) {
                 showMessage(`Insufficient stock! Only ${product.stock} units available.`, 'error');
                 return;
@@ -707,8 +401,8 @@
                 productName: product.name,
                 category: product.category,
                 qty: qty,
-                price: price,
-                total: price * qty,
+                price: product.price,
+                total: product.price * qty,
                 payment: document.getElementById('payment').value
             });
             
@@ -731,18 +425,11 @@
                 total += item.total;
                 html += `
                     <div class="cart-item">
-                        <div>
-                            <strong>${item.productName}</strong><br>
-                            Qty: ${item.qty} × ${formatCurrency(item.price)}
-                        </div>
-                        <div>
-                            <strong>${formatCurrency(item.total)}</strong>
-                            <button class="remove-btn" onclick="removeFromCart(${item.id})">✕</button>
-                        </div>
+                        <div><strong>${item.productName}</strong><br>Qty: ${item.qty} × ${formatCurrency(item.price)}</div>
+                        <div><strong>${formatCurrency(item.total)}</strong><button class="remove-btn" onclick="removeFromCart(${item.id})">✕</button></div>
                     </div>
                 `;
             });
-            
             cartDiv.innerHTML = html;
             document.getElementById('cartTotal').innerHTML = formatCurrency(total);
         }
@@ -766,13 +453,12 @@
             
             const timestamp = new Date().toISOString();
             let savedCount = 0;
-            let failedCount = 0;
             
             showLoading(true);
             
             for (const item of cart) {
                 if (item.qty > products[item.productCode].stock) {
-                    showMessage(`Cannot complete sale: ${item.productName} stock is now insufficient.`, 'error');
+                    showMessage(`Cannot complete sale: ${item.productName} stock is insufficient.`, 'error');
                     showLoading(false);
                     return;
                 }
@@ -792,38 +478,87 @@
                 };
                 
                 products[item.productCode].stock -= item.qty;
-                transactions.push(transaction);
+                transactions.unshift(transaction);
                 
-                const saved = await saveTransactionToSheets(transaction);
-                if (saved) {
-                    savedCount++;
-                } else {
-                    failedCount++;
+                // Save to Google Sheets
+                try {
+                    const response = await fetch(GOOGLE_SHEETS_API, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ action: 'save', data: transaction })
+                    });
+                    if (response.ok) savedCount++;
+                } catch (error) {
+                    console.error('Save error:', error);
                 }
             }
             
             saveToLocalStorage();
-            saveInventoryToLocalStorage();
             updateProductSelect();
-            updateInventoryAlerts();
             
             const totalSale = cart.reduce((sum, i) => sum + i.total, 0);
             clearCart();
+            updateStats();
+            showReport();
             
             showLoading(false);
-            updateStatsAndReport();
-            
             showMessage(`Sale complete! Total: ${formatCurrency(totalSale)} (${savedCount} saved to cloud)`, 'success');
         }
         
-        function updateStatsAndReport() {
-            updateStats();
-            showReport();
+        function saveToLocalStorage() {
+            localStorage.setItem('tps_transactions', JSON.stringify(transactions));
+        }
+        
+        async function syncFromGoogleSheets() {
+            showLoading(true);
+            showMessage('Syncing data from Google Sheets...', 'info');
+            
+            try {
+                const response = await fetch(`${GOOGLE_SHEETS_API}?action=getAll`, {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.transactions && data.transactions.length > 0) {
+                        // Map Google Sheets columns to our format
+                        transactions = data.transactions.map(t => ({
+                            id: t.TransactionID,
+                            timestamp: t.Timestamp,
+                            staffId: t.StaffID,
+                            staffName: t.StaffName,
+                            productCode: t.ItemCode,
+                            productName: t.ItemName,
+                            category: t.Category,
+                            qty: safeNumber(t.Quantity),
+                            price: safeNumber(t.UnitPrice),
+                            total: safeNumber(t.TotalPrice),
+                            payment: t.PaymentMethod
+                        }));
+                        
+                        saveToLocalStorage();
+                        updateStats();
+                        showReport();
+                        showMessage(`Loaded ${transactions.length} transactions from Google Sheets!`, 'success');
+                    } else {
+                        showMessage('No transactions found in Google Sheets. Make sure you have data.', 'info');
+                    }
+                } else {
+                    throw new Error('Failed to fetch');
+                }
+            } catch (error) {
+                console.error('Sync error:', error);
+                showMessage('Failed to sync with Google Sheets. Check your API URL.', 'error');
+            }
+            
+            showLoading(false);
         }
         
         function updateStats() {
-            const totalRevenue = transactions.reduce((sum, t) => sum + safeParseNumber(t.total), 0);
-            const totalItems = transactions.reduce((sum, t) => sum + safeParseNumber(t.qty), 0);
+            const totalRevenue = transactions.reduce((sum, t) => sum + safeNumber(t.total), 0);
+            const totalItems = transactions.reduce((sum, t) => sum + safeNumber(t.qty), 0);
             const avgTransaction = transactions.length > 0 ? totalRevenue / transactions.length : 0;
             
             document.getElementById('statTransactions').innerHTML = transactions.length.toLocaleString();
@@ -848,33 +583,31 @@
         
         function generateSalesReport(filtered, date) {
             if (filtered.length === 0) {
-                document.getElementById('salesTab').innerHTML = '<p style="text-align:center; padding: 40px;">No transactions found for the selected period.</p>';
+                document.getElementById('salesTab').innerHTML = '<p style="text-align:center; padding: 40px;">No transactions found. Click "Sync from Google Sheets" to load data.</p>';
                 return;
             }
             
-            const totalRevenue = filtered.reduce((sum, t) => sum + safeParseNumber(t.total), 0);
-            const totalItems = filtered.reduce((sum, t) => sum + safeParseNumber(t.qty), 0);
+            const totalRevenue = filtered.reduce((sum, t) => sum + safeNumber(t.total), 0);
+            const totalItems = filtered.reduce((sum, t) => sum + safeNumber(t.qty), 0);
             const avgTransaction = totalRevenue / filtered.length;
             
             const productStats = {};
             filtered.forEach(t => {
-                const productName = t.productName || 'Unknown';
-                if (!productStats[productName]) {
-                    productStats[productName] = { qty: 0, revenue: 0, transactions: 0 };
+                if (!productStats[t.productName]) {
+                    productStats[t.productName] = { qty: 0, revenue: 0, transactions: 0 };
                 }
-                productStats[productName].qty += safeParseNumber(t.qty);
-                productStats[productName].revenue += safeParseNumber(t.total);
-                productStats[productName].transactions++;
+                productStats[t.productName].qty += safeNumber(t.qty);
+                productStats[t.productName].revenue += safeNumber(t.total);
+                productStats[t.productName].transactions++;
             });
             
             const paymentStats = {};
             filtered.forEach(t => {
-                const payment = t.payment || 'Unknown';
-                if (!paymentStats[payment]) {
-                    paymentStats[payment] = { count: 0, revenue: 0 };
+                if (!paymentStats[t.payment]) {
+                    paymentStats[t.payment] = { count: 0, revenue: 0 };
                 }
-                paymentStats[payment].count++;
-                paymentStats[payment].revenue += safeParseNumber(t.total);
+                paymentStats[t.payment].count++;
+                paymentStats[t.payment].revenue += safeNumber(t.total);
             });
             
             let html = `
@@ -889,20 +622,13 @@
                 
                 <h3>🏆 Top Selling Products</h3>
                 <table class="report-table">
-                    <thead>
-                        <tr><th>Product</th><th>Quantity Sold</th><th>Transactions</th><th>Revenue</th>\\
-                    </thead>
+                    <thead><tr><th>Product</th><th>Quantity Sold</th><th>Transactions</th><th>Revenue</th></tr></thead>
                     <tbody>
                         ${Object.entries(productStats).sort((a,b) => b[1].revenue - a[1].revenue).slice(0, 10).map(([name, data]) => `
-                            <tr>
-                                <td><strong>${name}</strong></td>
-                                <td>${data.qty}</td>
-                                <td>${data.transactions}</td>
-                                <td><strong>${formatCurrency(data.revenue)}</strong></td>
-                            </tr>
+                            <tr><td><strong>${name}</strong></td><td>${data.qty}</td><td>${data.transactions}</td><td><strong>${formatCurrency(data.revenue)}</strong></td></tr>
                         `).join('')}
                     </tbody>
-                \\
+                </table>
             `;
             
             document.getElementById('salesTab').innerHTML = html;
@@ -916,45 +642,48 @@
             
             const categoryStats = {};
             for (const [code, product] of Object.entries(products)) {
-                categoryStats[product.category] = {
-                    revenue: 0,
-                    qty: 0,
-                    transactions: 0,
-                    products: new Set()
-                };
+                categoryStats[product.category] = { revenue: 0, qty: 0, transactions: 0, products: new Set() };
             }
             
             filtered.forEach(t => {
-                const category = t.category || 'Other';
-                if (categoryStats[category]) {
-                    categoryStats[category].revenue += safeParseNumber(t.total);
-                    categoryStats[category].qty += safeParseNumber(t.qty);
-                    categoryStats[category].transactions++;
-                    categoryStats[category].products.add(t.productName);
+                if (categoryStats[t.category]) {
+                    categoryStats[t.category].revenue += safeNumber(t.total);
+                    categoryStats[t.category].qty += safeNumber(t.qty);
+                    categoryStats[t.category].transactions++;
+                    categoryStats[t.category].products.add(t.productName);
                 }
             });
             
-            const totalRevenue = filtered.reduce((sum, t) => sum + safeParseNumber(t.total), 0);
+            const totalRevenue = filtered.reduce((sum, t) => sum + safeNumber(t.total), 0);
             
             let html = `
                 <h3>📂 Sales by Category</h3>
                 <table class="report-table">
-                    <thead>
-                        <tr><th>Category</th><th>Products</th><th>Units Sold</th><th>Revenue</th><th>% of Total</th><th>Avg/Transaction</th>\\
-                    </thead>
+                    <thead><tr><th>Category</th><th>Products</th><th>Units Sold</th><th>Revenue</th><th>% of Total</th><th>Avg/Transaction</th></tr></thead>
                     <tbody>
                         ${Object.entries(categoryStats).sort((a,b) => b[1].revenue - a[1].revenue).map(([category, data]) => `
-                             <tr>
-                                 <td><strong>${category}</strong></td>
-                                 <td>${data.products.size}</td>
-                                 <td>${data.qty}</td>
-                                 <td><strong>${formatCurrency(data.revenue)}</strong></td>
-                                 <td>${totalRevenue > 0 ? ((data.revenue / totalRevenue) * 100).toFixed(1) : 0}%</td>
-                                 <td>${data.transactions > 0 ? formatCurrency(data.revenue / data.transactions) : formatCurrency(0)}</td>
-                             </tr>
+                            <tr>
+                                <td><strong>${category}</strong></td>
+                                <td>${data.products.size}</td>
+                                <td>${data.qty}</td>
+                                <td><strong>${formatCurrency(data.revenue)}</strong></td>
+                                <td>${totalRevenue > 0 ? ((data.revenue / totalRevenue) * 100).toFixed(1) : 0}%</td>
+                                <td>${data.transactions > 0 ? formatCurrency(data.revenue / data.transactions) : formatCurrency(0)}</td>
+                            </tr>
                         `).join('')}
                     </tbody>
-                 </table>
+                </table>
+                <div class="category-summary">
+                    <h3>🎯 Category Insights</h3>
+                    ${(() => {
+                        const topCategory = Object.entries(categoryStats).sort((a,b) => b[1].revenue - a[1].revenue)[0];
+                        const fastMoving = Object.entries(categoryStats).sort((a,b) => b[1].qty - a[1].qty)[0];
+                        return `
+                            <p><strong>Top Revenue Category:</strong> ${topCategory[0]} (${formatCurrency(topCategory[1].revenue)})</p>
+                            <p><strong>Fastest Moving Category:</strong> ${fastMoving[0]} (${fastMoving[1].qty} units sold)</p>
+                        `;
+                    })()}
+                </div>
             `;
             
             document.getElementById('categoryTab').innerHTML = html;
@@ -966,8 +695,7 @@
             const healthyItems = [];
             
             for (const [code, product] of Object.entries(products)) {
-                const stockStatus = {
-                    code: code,
+                const item = {
                     name: product.name,
                     category: product.category,
                     stock: product.stock,
@@ -977,13 +705,9 @@
                     stockValue: product.stock * product.price
                 };
                 
-                if (product.stock <= 0) {
-                    criticalItems.push(stockStatus);
-                } else if (product.stock <= product.reorderLevel) {
-                    lowStockItems.push(stockStatus);
-                } else {
-                    healthyItems.push(stockStatus);
-                }
+                if (product.stock <= 0) criticalItems.push(item);
+                else if (product.stock <= product.reorderLevel) lowStockItems.push(item);
+                else healthyItems.push(item);
             }
             
             const totalInventoryValue = [...healthyItems, ...lowStockItems, ...criticalItems].reduce((sum, item) => sum + item.stockValue, 0);
@@ -999,69 +723,29 @@
             `;
             
             if (criticalItems.length > 0) {
-                html += `
-                    <h3 style="color:#dc3545;">⚠️ CRITICAL - Out of Stock</h3>
-                    <table class="report-table">
-                        <thead>
-                            <tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Reorder Qty</th><th>Loss Potential</th>\\
-                        </thead>
-                        <tbody>
-                            ${criticalItems.map(item => `
-                                <tr class="inventory-critical">
-                                    <td><strong>${item.name}</strong></td>
-                                    <td>${item.category}</td>
-                                    <td style="color:#dc3545; font-weight:bold;">0 units</td>
-                                    <td>${item.reorderQty} units</td>
-                                    <td>${formatCurrency(item.reorderQty * item.price)} lost sales potential</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                `;
+                html += `<h3 style="color:#dc3545;">⚠️ CRITICAL - Out of Stock</h3>
+                <table class="report-table"><thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Reorder Qty</th><th>Loss Potential</th></tr></thead><tbody>
+                    ${criticalItems.map(item => `
+                        <tr style="background:#f8d7da;"><td><strong>${item.name}</strong></td><td>${item.category}</td><td style="color:#dc3545;">0 units</td><td>${item.reorderQty} units</td><td>${formatCurrency(item.reorderQty * item.price)}</td></tr>
+                    `).join('')}
+                </tbody></table>`;
             }
             
             if (lowStockItems.length > 0) {
-                html += `
-                    <h3 style="color:#ffc107;">📋 Reorder Recommendations</h3>
-                    <table class="report-table">
-                        <thead>
-                            <tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Reorder Level</th><th>Recommended Order</th><th>Estimated Cost</th>\\
-                        </thead>
-                        <tbody>
-                            ${lowStockItems.map(item => `
-                                <tr class="inventory-low">
-                                    <td><strong>${item.name}</strong></td>
-                                    <td>${item.category}</td>
-                                    <td>${item.stock} units</td>
-                                    <td>${item.reorderLevel} units</td>
-                                    <td>${item.reorderQty} units</td>
-                                    <td>${formatCurrency(item.reorderQty * item.price)}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                `;
+                html += `<h3 style="color:#ffc107;">📋 Reorder Recommendations</h3>
+                <table class="report-table"><thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Reorder Level</th><th>Recommended Order</th><th>Estimated Cost</th></tr></thead><tbody>
+                    ${lowStockItems.map(item => `
+                        <tr style="background:#fff3cd;"><td><strong>${item.name}</strong></td><td>${item.category}</td><td>${item.stock} units</td><td>${item.reorderLevel} units</td><td>${item.reorderQty} units</td><td>${formatCurrency(item.reorderQty * item.price)}</td></tr>
+                    `).join('')}
+                </tbody></table>`;
             }
             
-            html += `
-                <h3 style="margin-top:20px;">✅ Healthy Stock Levels</h3>
-                <table class="report-table">
-                    <thead>
-                        <tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Stock Value</th><th>Status</th>\\
-                    </thead>
-                    <tbody>
-                        ${healthyItems.slice(0, 10).map(item => `
-                            <tr>
-                                <td>${item.name}</td>
-                                <td>${item.category}</td>
-                                <td>${item.stock} units</td>
-                                <td>${formatCurrency(item.stockValue)}</td>
-                                <td><span class="badge" style="background:#28a745; color:white;">OK</span></td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
+            html += `<h3 style="margin-top:20px;">✅ Healthy Stock Levels</h3>
+            <table class="report-table"><thead><tr><th>Product</th><th>Category</th><th>Current Stock</th><th>Stock Value</th><th>Status</th></tr></thead><tbody>
+                ${healthyItems.slice(0, 10).map(item => `
+                    <tr><td>${item.name}</td><td>${item.category}</td><td>${item.stock} units</td><td>${formatCurrency(item.stockValue)}</td><td><span class="badge" style="background:#28a745;">OK</span></td></tr>
+                `).join('')}
+            </tbody></table>`;
             
             document.getElementById('inventoryTab').innerHTML = html;
         }
@@ -1074,23 +758,20 @@
             
             const staffStats = {};
             filtered.forEach(t => {
-                const staffName = t.staffName || 'Unknown';
-                if (!staffStats[staffName]) {
-                    staffStats[staffName] = { count: 0, revenue: 0, items: 0 };
+                if (!staffStats[t.staffName]) {
+                    staffStats[t.staffName] = { count: 0, revenue: 0, items: 0 };
                 }
-                staffStats[staffName].count++;
-                staffStats[staffName].revenue += safeParseNumber(t.total);
-                staffStats[staffName].items += safeParseNumber(t.qty);
+                staffStats[t.staffName].count++;
+                staffStats[t.staffName].revenue += safeNumber(t.total);
+                staffStats[t.staffName].items += safeNumber(t.qty);
             });
             
-            const totalRevenue = filtered.reduce((sum, t) => sum + safeParseNumber(t.total), 0);
+            const totalRevenue = filtered.reduce((sum, t) => sum + safeNumber(t.total), 0);
             
             let html = `
                 <h3>👥 Staff Performance Report</h3>
                 <table class="report-table">
-                    <thead>
-                        <tr><th>Staff Member</th><th>Transactions</th><th>Items Sold</th><th>Revenue</th><th>Avg/Transaction</th><th>% of Total</th>\\
-                    </thead>
+                    <thead><tr><th>Staff Member</th><th>Transactions</th><th>Items Sold</th><th>Revenue</th><th>Avg/Transaction</th><th>% of Total</th></tr></thead>
                     <tbody>
                         ${Object.entries(staffStats).sort((a,b) => b[1].revenue - a[1].revenue).map(([name, data]) => `
                             <tr>
@@ -1099,47 +780,36 @@
                                 <td>${data.items}</td>
                                 <td><strong>${formatCurrency(data.revenue)}</strong></td>
                                 <td>${formatCurrency(data.revenue / data.count)}</td>
-                                <td>${totalRevenue > 0 ? ((data.revenue / totalRevenue) * 100).toFixed(1) : 0}%</td>
+                                <td>${((data.revenue / totalRevenue) * 100).toFixed(1)}%</td>
                             </tr>
                         `).join('')}
                     </tbody>
                 </table>
+                <div class="category-summary">
+                    <h3>🏆 Staff Recognition</h3>
+                    ${(() => {
+                        const topRevenue = Object.entries(staffStats).sort((a,b) => b[1].revenue - a[1].revenue)[0];
+                        const topItems = Object.entries(staffStats).sort((a,b) => b[1].items - a[1].items)[0];
+                        return `
+                            <p><strong>🏅 Top Revenue Generator:</strong> ${topRevenue[0]} (${formatCurrency(topRevenue[1].revenue)})</p>
+                            <p><strong>📦 Most Items Sold:</strong> ${topItems[0]} (${topItems[1].items} units)</p>
+                        `;
+                    })()}
+                </div>
             `;
             
             document.getElementById('staffTab').innerHTML = html;
         }
         
         function showWeeklyReport() {
-            const endDate = new Date();
-            const startDate = new Date();
-            startDate.setDate(startDate.getDate() - 7);
-            
             document.getElementById('reportDate').value = '';
             showReport();
-            
-            const note = document.createElement('div');
-            note.style.cssText = 'background: #e3f2fd; padding: 10px; border-radius: 8px; margin-bottom: 15px;';
-            note.innerHTML = `<strong>📅 Last 7 Days Report:</strong> ${startDate.toISOString().split('T')[0]} to ${endDate.toISOString().split('T')[0]}`;
-            
-            const salesTab = document.getElementById('salesTab');
-            if (salesTab.firstChild) {
-                salesTab.insertBefore(note, salesTab.firstChild);
-            }
-        }
-        
-        async function refreshData() {
-            await loadTransactionsFromSheets();
-            showMessage('Data refreshed from database', 'success');
         }
         
         function switchTab(tabName) {
-            const tabs = document.querySelectorAll('.tab');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabs.forEach(tab => tab.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-            
+            document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(`${tabName}Tab`).classList.add('active');
         }
         
@@ -1167,13 +837,15 @@
             }
         }
         
-        async function init() {
-            updateProductSelect();
-            await loadTransactionsFromSheets();
-            updateStatsAndReport();
-        }
+        updateProductSelect();
         
-        init();
+        // Load from local storage first
+        const saved = localStorage.getItem('tps_transactions');
+        if (saved) {
+            transactions = JSON.parse(saved);
+            updateStats();
+            showReport();
+        }
     </script>
 </body>
 </html>
