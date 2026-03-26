@@ -645,18 +645,20 @@
         
         async function saveTransactionToSheets(transaction) {
             try {
-                const response = await fetch(API_URL, {
+                await fetch(API_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
+                    mode: 'no-cors',  //REQUIRED
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify({
                         action: 'saveTransaction',
                         transaction: transaction
                     })
                 });
-                
-                const result = await response.json();
-                return result.success;
+
+                //⚠️ DO NOT read response.json()
+                RETURN TRUE;
                 
             } catch (error) {
                 console.error('Save error:', error);
