@@ -506,7 +506,7 @@
     <script>
         // ============ CONFIGURATION ============
         // REPLACE WITH YOUR GOOGLE APPS SCRIPT URL
-        const API_URL = 'https://script.google.com/macros/s/AKfycbzIId1OaJSEV4pHSd5S4gp3wB4ZPRjx5GXT6Mtzy7P_cPJkZprw5Y2SE5hPuezhDPI9/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbxNP3Om2EBWthnVgMvaA4c0rCEJFGigpt47_He89MUtK52S8TdNT0CGA6wN-2n_Qrtz/exec';
         
         // ============ DATA STORES ============
         let products = {};
@@ -647,7 +647,7 @@
             try {
                 const response = await fetch(API_URL, {
                     method: 'POST',
-                    mode: 'cors',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         action: 'saveTransaction',
