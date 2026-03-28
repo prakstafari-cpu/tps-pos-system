@@ -1,204 +1,478 @@
-# TPS-MIS Point of Sale System
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad's IT Essentials - TPS MIS System Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-## 📋 Project Overview
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            padding: 40px 20px;
+            color: #1a2a3a;
+        }
 
-This is a complete **Transaction Processing System (TPS)** with integrated **Management Information System (MIS)** reporting for retail businesses. The application simulates a point-of-sale system that captures sales transactions, stores them in Google Sheets, and generates real-time productivity reports for management.
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
 
-**Live Demo:** [https://prakstafari-cpu.github.io/tps-pos-system/](https://prakstafari-cpu.github.io/tps-pos-system/)
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
 
-**Database:** [Google Sheets Link](https://docs.google.com/spreadsheets/d/18k-9T02qotCTz71bdVDHvzEun3hxg8gwLqUGy2WqjRM/edit?usp=sharing)
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
 
----
+        .header p {
+            opacity: 0.9;
+            font-size: 18px;
+        }
 
-## 🏪 Business Scenario: TechRetail Solutions
+        /* Content */
+        .content {
+            padding: 40px;
+        }
 
-TechRetail Solutions is a mid-sized electronics retailer operating three store locations in the metropolitan area. The company employs 25 staff members and processes an average of 200 daily transactions. Prior to implementing this Transaction Processing System (TPS) and Management Information System (MIS), the business relied on manual cash registers and handwritten sales logs, leading to significant operational inefficiencies.
+        /* Section Styles */
+        .section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 30px;
+        }
 
-The primary business challenge was the inability to track real-time inventory levels, resulting in frequent stockouts of popular items and excess inventory of slow-moving products. Staff performance tracking was non-existent, making it impossible to identify top performers or provide targeted training. Daily sales reconciliation required 2-3 hours of manual work, often leading to discrepancies and delayed financial reporting.
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
 
-The implementation of this integrated TPS/MIS solution addresses these critical business needs by automating transaction capture, providing real-time sales data, and generating actionable business intelligence for management decision-making.
+        .section h2 {
+            color: #1e3c72;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 4px solid #2a5298;
+        }
 
----
+        .section h3 {
+            color: #2a5298;
+            font-size: 18px;
+            margin: 20px 0 12px 0;
+        }
 
-## ✨ Features
+        /* Links Box */
+        .links-box {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
-### Transaction Processing System (TPS)
-- 🛒 **Point of Sale Interface** - User-friendly POS with product catalog
-- 👥 **Staff Management** - Track sales by individual staff members
-- 📦 **Product Catalog** - 10 products across Electronics, Furniture, and Accessories
-- 💳 **Multiple Payment Methods** - Cash, Credit Card, Debit Card, Mobile Payment
-- 💾 **Google Sheets Integration** - All transactions stored in cloud database
-- 🔄 **Local Backup** - Transactions also saved in browser localStorage
+        .link-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s;
+        }
 
-### Management Information System (MIS)
-- 📊 **Product Performance Reports** - Sales volume and revenue by product
-- 👤 **Staff Performance Reports** - Transaction counts and revenue by staff member
-- 📅 **Date Filtering** - View reports for specific dates
-- 📈 **Summary Statistics** - Total transactions, revenue, and average values
-- 🎲 **Sample Data Generator** - Create 1000+ transactions for testing
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
----
+        .link-card h3 {
+            margin-top: 0;
+            color: #1e3c72;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
 
-## 🛠️ Technologies Used
+        .link-card a {
+            color: #2a5298;
+            text-decoration: none;
+            word-break: break-all;
+            font-size: 14px;
+        }
 
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Structure and layout |
-| CSS3 | Styling and responsive design |
-| JavaScript | Business logic and interactivity |
-| Google Sheets | Cloud database storage |
-| Google Apps Script | API endpoint for data storage |
-| GitHub Pages | Free web hosting |
+        .link-card a:hover {
+            text-decoration: underline;
+        }
 
----
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
 
-## 📊 Database Structure
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-### Products Tab
-| Column | Type | Description |
-|--------|------|-------------|
-| ItemCode | Text | Unique product identifier |
-| ItemName | Text | Product name |
-| Category | Text | Product category |
-| UnitPrice | Number | Price per unit |
+        .data-table th {
+            background: #f8f9fa;
+            color: #1e3c72;
+            font-weight: 600;
+        }
 
-### Staff Tab
-| Column | Type | Description |
-|--------|------|-------------|
-| StaffID | Text | Unique staff identifier |
-| StaffName | Text | Staff member name |
-| Role | Text | Job position |
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
 
-### Transactions Tab
-| Column | Type | Description |
-|--------|------|-------------|
-| TransactionID | Text | Unique transaction identifier |
-| Timestamp | DateTime | Date and time of sale |
-| StaffID | Text | Staff who completed sale |
-| StaffName | Text | Staff member name |
-| ItemCode | Text | Product identifier |
-| ItemName | Text | Product name |
-| Quantity | Number | Units sold |
-| UnitPrice | Number | Price per unit |
-| TotalPrice | Number | Quantity × UnitPrice |
-| PaymentMethod | Text | Cash/Credit/Debit/Mobile |
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
 
----
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 3px solid #2a5298;
+        }
 
-## 🚀 Installation & Setup
+        .feature-card strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
 
-### Prerequisites
-- Google Account (for Sheets and Apps Script)
-- GitHub Account (for hosting)
+        .feature-card p {
+            color: #555;
+            font-size: 14px;
+            margin: 0;
+        }
 
-### Step 1: Create Google Sheet Database
-1. Create a new Google Sheet
-2. Add three tabs: `Products`, `Staff`, `Transactions`
-3. Populate Products and Staff tabs with sample data
+        /* Steps */
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
 
-### Step 2: Deploy Google Apps Script
-1. In your Google Sheet, go to Extensions → Apps Script
-2. Paste the provided API code
-3. Deploy as Web App (Execute as: Me, Access: Anyone)
-4. Copy the Web App URL
+        .steps li {
+            counter-increment: step;
+            margin-bottom: 20px;
+            padding-left: 48px;
+            position: relative;
+        }
 
-### Step 3: Deploy to GitHub Pages
-1. Create a new GitHub repository
-2. Upload `index.html` and `README.md`
-3. Update the API_URL in index.html with your Apps Script URL
-4. Enable GitHub Pages in repository Settings
-5. Access your site at `https://YOUR_USERNAME.github.io/repo-name/`
+        .steps li::before {
+            content: counter(step);
+            background: #2a5298;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
----
+        .sub-steps {
+            margin-top: 10px;
+            margin-left: 20px;
+            list-style: none;
+        }
 
-## 📈 MIS Reports Generated
+        .sub-steps li {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+            counter-increment: none;
+        }
 
-### Product Performance Report
-- Product name
-- Total quantity sold
-- Total revenue generated
-- Number of transactions
+        .sub-steps li::before {
+            content: "•";
+            background: none;
+            color: #2a5298;
+            width: auto;
+            height: auto;
+            font-size: 18px;
+            top: -2px;
+        }
 
-### Staff Performance Report
-- Staff member name
-- Number of transactions completed
-- Total revenue generated
-- Items sold count
+        /* Badges */
+        .badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1e3c72;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
 
-### Summary Statistics
-- Total transactions for period
-- Total revenue
-- Average transaction value
+        /* Notes */
+        .note-box {
+            background: #e8f5e9;
+            border-left: 4px solid #28a745;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
 
----
+        .note-box p {
+            margin: 0;
+            color: #2e5c2e;
+        }
 
-## 📝 Assignment Deliverables
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .data-table {
+                font-size: 12px;
+            }
+            .data-table th,
+            .data-table td {
+                padding: 8px;
+            }
+        }
 
-| Deliverable | Status | Location |
-|-------------|--------|----------|
-| Business Narrative (300 words) | ✅ Complete | This README |
-| Hosted Application Link | ✅ Complete | GitHub Pages URL |
-| Google Sheets Database Link | ✅ Complete | Google Sheet URL |
-| 1000+ Transactions | ✅ Complete | Use "Generate 1000 Samples" button |
-| MIS Report (1 Week) | ✅ Complete | Reports panel in application |
-| Implementation Report (500 words) | ✅ Complete | See below |
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🖥️ Prasad's IT Essentials</h1>
+            <p>Transaction Processing System (TPS) & Management Information System (MIS)</p>
+            <p style="font-size: 14px; margin-top: 10px;">Complete Documentation</p>
+        </div>
 
----
+        <!-- Content -->
+        <div class="content">
+            <!-- Project Links -->
+            <div class="section">
+                <h2>🔗 Project Links</h2>
+                <div class="links-box">
+                    <div class="link-card">
+                        <h3>🌐 Hosted Application</h3>
+                        <a href="https://prakstafari-cpu.github.io/tps-pos-system/" target="_blank">https://prakstafari-cpu.github.io/tps-pos-system/</a>
+                    </div>
+                    <div class="link-card">
+                        <h3>📊 Google Sheets Database</h3>
+                        <a href="https://docs.google.com/spreadsheets/d/18k-9T02qotCTz71bdVDHvzEun3hxg8gwLqUGy2WqjRM/edit?usp=sharing" target="_blank">View Transaction Database</a>
+                    </div>
+                </div>
+            </div>
 
-## 📄 Implementation Report
+            <!-- Brief Description -->
+            <div class="section">
+                <h2>📖 Brief Description</h2>
+                <p style="line-height: 1.6; color: #333;">Prasad's IT Essentials is a web-based <strong>Transaction Processing System (TPS)</strong> integrated with a <strong>Management Information System (MIS)</strong> designed for retail businesses. The application simulates a point-of-sale system that captures sales transactions including staff details, product information, quantities, prices, and payment methods. All transactions are stored in a Google Sheets database, and the system generates real-time daily productivity reports for management analysis. The application serves as a complete solution for processing sales, tracking inventory, and monitoring staff performance.</p>
+            </div>
 
-### Introduction
-The implementation of this integrated Transaction Processing System (TPS) and Management Information System (MIS) at TechRetail Solutions represents a significant advancement in operational capabilities. This report evaluates the implementation process, system functionality, and business benefits derived from this technological investment.
+            <!-- Application Features -->
+            <div class="section">
+                <h2>✨ Application Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card"><strong>🛒 Point of Sale Interface</strong><p>User-friendly form with product selection, quantity controls, and price display</p></div>
+                    <div class="feature-card"><strong>👥 Staff Selection</strong><p>Dropdown menu to assign transactions to specific staff members</p></div>
+                    <div class="feature-card"><strong>📦 Product Catalog</strong><p>Complete product listing with categories and pricing</p></div>
+                    <div class="feature-card"><strong>🔢 Quantity Controls</strong><p>+/- buttons for easy quantity adjustment</p></div>
+                    <div class="feature-card"><strong>✅ Stock Validation</strong><p>Real-time inventory checking to prevent overselling</p></div>
+                    <div class="feature-card"><strong>🛍️ Shopping Cart</strong><p>Multi-item cart with subtotal calculation and item removal</p></div>
+                    <div class="feature-card"><strong>💳 Payment Methods</strong><p>Support for Cash, Credit Card, Debit Card, and Mobile Payment</p></div>
+                    <div class="feature-card"><strong>☁️ Cloud Database</strong><p>All transactions saved to Google Sheets via API</p></div>
+                    <div class="feature-card"><strong>💾 Local Backup</strong><p>Transactions stored in browser localStorage for redundancy</p></div>
+                </div>
+            </div>
 
-### Transaction Processing System (TPS) Implementation
+            <!-- MIS -->
+            <div class="section">
+                <h2>📊 Management Information System (MIS)</h2>
+                <p style="margin-bottom: 15px;">The MIS component provides comprehensive reporting capabilities for business management:</p>
+                <div class="feature-grid">
+                    <div class="feature-card"><strong>📈 Sales Report</strong><p>Total transactions, revenue, items sold, average transaction value, top selling products, payment method distribution</p></div>
+                    <div class="feature-card"><strong>📂 Category Analysis</strong><p>Sales performance by product category including revenue, units sold, and average transaction value</p></div>
+                    <div class="feature-card"><strong>📦 Inventory Status</strong><p>Real-time stock levels, out-of-stock alerts, reorder recommendations, total inventory value</p></div>
+                    <div class="feature-card"><strong>👤 Staff Performance</strong><p>Individual staff metrics: transaction count, items sold, revenue generated, average transaction value</p></div>
+                </div>
+                <div style="background: #eef2fa; padding: 15px; border-radius: 12px; margin-top: 10px;">
+                    <p style="margin: 0;"><strong>➕ Additional MIS Capabilities:</strong> Date filtering for specific date ranges • Last 7 days quick report • Performance rankings and recognition highlights • Low stock and critical inventory alerts</p>
+                </div>
+            </div>
 
-The TPS was designed with three core components:
+            <!-- Technology Stack -->
+            <div class="section">
+                <h2>🛠️ Technology Stack</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Technology</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Frontend</strong></td><td>HTML5, CSS3, JavaScript</td><td>User interface, business logic, client-side processing</td></tr>
+                        <tr><td><strong>Backend API</strong></td><td>Google Apps Script</td><td>REST API endpoint for database operations</td></tr>
+                        <tr><td><strong>Database</strong></td><td>Google Sheets</td><td>Cloud storage for products, staff, and transaction data</td></tr>
+                        <tr><td><strong>Hosting</strong></td><td>GitHub Pages</td><td>Free web hosting for the application</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-**Data Capture Layer:** The system records comprehensive transaction data including transaction ID, timestamp, staff identification, item details, quantities, unit prices, total amounts, and payment methods. This granular data collection ensures complete audit trails and eliminates the data gaps present in the previous manual system.
+            <!-- Database Structure -->
+            <div class="section">
+                <h2>📁 Database Structure</h2>
+                
+                <h3>📦 Products Tab</h3>
+                <table class="data-table">
+                    <thead><tr><th>Column</th><th>Data Type</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td>ItemCode</td><td>Text</td><td>Unique product identifier</td></tr>
+                        <tr><td>ItemName</td><td>Text</td><td>Product name</td></tr>
+                        <tr><td>Category</td><td>Text</td><td>Product category (Electronics/Accessories/Storage)</td></tr>
+                        <tr><td>UnitPrice</td><td>Number</td><td>Price per unit</td></tr>
+                        <tr><td>StockQuantity</td><td>Number</td><td>Current inventory level</td></tr>
+                        <tr><td>ReorderLevel</td><td>Number</td><td>Minimum stock threshold for alerts</td></tr>
+                        <tr><td>ReorderQuantity</td><td>Number</td><td>Suggested order quantity</td></tr>
+                    </tbody>
+                </table>
 
-**User Interface Layer:** The point-of-sale interface was designed with user experience as a priority. Staff members can complete transactions in under 30 seconds using dropdown menus for product selection and quantity adjustment. The cart system allows for multiple items per transaction with clear visual feedback.
+                <h3>👥 Staff Tab</h3>
+                <table class="data-table">
+                    <thead><tr><th>Column</th><th>Data Type</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td>StaffID</td><td>Text</td><td>Unique staff identifier</td></tr>
+                        <tr><td>StaffName</td><td>Text</td><td>Staff member full name</td></tr>
+                        <tr><td>Role</td><td>Text</td><td>Job position</td></tr>
+                    </tbody>
+                </table>
 
-**Data Storage Layer:** Google Sheets serves as the backend database with Google Apps Script providing REST API functionality. This cloud-based solution eliminated the need for complex database infrastructure while maintaining data integrity and accessibility. LocalStorage provides offline backup capability.
+                <h3>📝 Transactions Tab</h3>
+                <table class="data-table">
+                    <thead><tr><th>Column</th><th>Data Type</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td>TransactionID</td><td>Text</td><td>Unique transaction identifier</td></tr>
+                        <tr><td>Timestamp</td><td>DateTime</td><td>Date and time of transaction</td></tr>
+                        <tr><td>StaffID</td><td>Text</td><td>Staff who processed sale</td></tr>
+                        <tr><td>StaffName</td><td>Text</td><td>Staff member name</td></tr>
+                        <tr><td>ItemCode</td><td>Text</td><td>Product identifier</td></tr>
+                        <tr><td>ItemName</td><td>Text</td><td>Product name</td></tr>
+                        <tr><td>Category</td><td>Text</td><td>Product category</td></tr>
+                        <tr><td>Quantity</td><td>Number</td><td>Units sold</td></tr>
+                        <tr><td>UnitPrice</td><td>Number</td><td>Price per unit</td></tr>
+                        <tr><td>TotalPrice</td><td>Number</td><td>Quantity × UnitPrice</td></tr>
+                        <tr><td>PaymentMethod</td><td>Text</td><td>Cash/Credit Card/Debit Card/Mobile Payment</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-### Management Information System (MIS) Implementation
+            <!-- How to Use -->
+            <div class="section">
+                <h2>🚀 How to Use the Application</h2>
+                
+                <h3>Step 1: Access the Application</h3>
+                <p>Navigate to the hosted application URL and wait for the interface to load.</p>
 
-The MIS component transforms raw transaction data into actionable business intelligence:
+                <h3>Step 2: Load Data from Google Sheets</h3>
+                <p>Click the <strong>"Load from Google Sheets"</strong> button at the top of the reports section. This fetches the latest products, staff, and transaction data from the cloud database.</p>
 
-**Reporting Engine:** Daily productivity reports analyze product performance (sales volume and revenue by product) and staff productivity (transaction counts and revenue by staff member). These reports have replaced manual spreadsheet compilation, reducing reporting time from 2-3 hours to instant generation.
+                <h3>Step 3: Process a New Transaction</h3>
+                <ul class="steps">
+                    <li>Select a <strong>Staff Member</strong> from the dropdown list</li>
+                    <li>Select a <strong>Product</strong> from the product dropdown</li>
+                    <li>Review the <strong>Unit Price</strong> (auto-populated)</li>
+                    <li>Check <strong>Current Stock</strong> to ensure availability</li>
+                    <li>Enter <strong>Quantity</strong> using +/- buttons or type a number</li>
+                    <li>Select <strong>Payment Method</strong> (Cash, Credit Card, Debit Card, Mobile Payment)</li>
+                    <li>Click <strong>"Add to Cart"</strong> to include the item</li>
+                    <li>Repeat steps 2-7 to add multiple items</li>
+                    <li>Review the <strong>Cart</strong> and Subtotal</li>
+                    <li>Click <strong>"Complete Sale"</strong> to finalize and save to database</li>
+                </ul>
 
-**Key Performance Indicators:** The system tracks total transactions, total revenue, average transaction value, product performance rankings, and staff performance rankings. These metrics enable data-driven decision-making at all management levels.
+                <h3>Step 4: View MIS Reports</h3>
+                <ul class="steps">
+                    <li>Ensure data is loaded (click <strong>"Load from Google Sheets"</strong> if needed)</li>
+                    <li>Select a date using the date picker or click <strong>"Last 7 Days"</strong></li>
+                    <li>Click <strong>"Generate Report"</strong> to update all report tabs</li>
+                    <li>Navigate between tabs to view different reports:
+                        <ul class="sub-steps">
+                            <li><strong>Sales Report:</strong> Overall sales metrics and product performance</li>
+                            <li><strong>Category Analysis:</strong> Performance by product category</li>
+                            <li><strong>Inventory Status:</strong> Current stock levels and reorder recommendations</li>
+                            <li><strong>Staff Performance:</strong> Individual staff member metrics</li>
+                        </ul>
+                    </li>
+                </ul>
 
-### Business Benefits
+                <h3>Step 5: Monitor Key Statistics</h3>
+                <p>The top statistics bar displays real-time:</p>
+                <ul class="sub-steps" style="margin-bottom: 20px;">
+                    <li>Total Transactions</li>
+                    <li>Total Revenue</li>
+                    <li>Items Sold</li>
+                    <li>Average Transaction Value</li>
+                </ul>
 
-**Operational Efficiency:**
-- 75% reduction in daily reconciliation time
-- 100% elimination of manual data entry errors
-- Real-time visibility into sales performance
+                <div class="note-box">
+                    <p><strong>📝 Notes:</strong></p>
+                    <p>• All transactions are automatically saved to Google Sheets when "Complete Sale" is clicked</p>
+                    <p>• The system validates stock levels before allowing a sale</p>
+                    <p>• Inventory levels are automatically reduced after each transaction</p>
+                    <p>• Low stock items are highlighted with visual alerts</p>
+                    <p>• Reports can be generated for any date range using the date picker</p>
+                </div>
+            </div>
 
-**Decision-Making Capabilities:**
-Management now accesses comprehensive sales data within seconds, enabling rapid response to market trends. The ability to identify top-performing products and staff has transformed inventory management and personnel development strategies.
-
-**Staff Productivity:**
-Clear performance metrics have created healthy competition and provided objective data for performance reviews and incentive programs. The intuitive interface has reduced training time for new staff by 40%.
-
-### Challenges and Solutions
-
-Initial implementation challenges included staff resistance to new technology and the learning curve associated with digital systems. These were addressed through comprehensive training sessions, phased rollout allowing gradual adaptation, and continuous support and feedback collection.
-
-### Conclusion
-
-The implementation of this integrated TPS and MIS solution has successfully addressed the core business needs for accurate transaction processing and comprehensive management reporting. The system has delivered measurable improvements in operational efficiency, staff productivity, and decision-making capabilities, positioning TechRetail Solutions for sustainable growth in an increasingly competitive retail environment.
-
----
-
-## 📞 Contact
-
-**Author:** [Prakash Prasad]  
-**Course:** MNG3204  
-**Due Date:** March 31, 2026
-
----
-
-## 📄 License
-
-MIT License - Free for educational and commercial use.
+            <!-- Footer -->
+            <hr>
+            <div style="text-align: center; padding: 20px 0 10px; color: #6c757d; font-size: 13px;">
+                <p>Prasad's IT Essentials | Transaction Processing System & Management Information System</p>
+                <p>© 2026 | For educational purposes</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
